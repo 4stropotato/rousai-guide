@@ -79,10 +79,12 @@ function renderSteps() {
 <div class="step-card urgent">
   <div class="step-number">3</div>
   <h4>Bumalik sa Hospital — KASAMA SI NAOMI, HINDI SI YUTA</h4>
+
   <div class="highlight danger" style="margin-bottom:10px">
-    <strong>Si Naomi (asawa mo) ang isama mo, HINDI si Yuta.</strong><br>
-    Kung mag-insist si Yuta, sabihin mo:
+    <strong>Si Naomi (asawa mo) ang isama mo, HINDI si Yuta.</strong> Hindi mo kailangan sabihin kay Yuta na pupunta ka. Karapatan mo bilang pasyente.
   </div>
+
+  <p style="color:var(--accent);font-weight:600;margin-bottom:8px">Kung mag-insist si Yuta na sasama siya:</p>
   ${phrase(
     '\u5927\u4e08\u592b\u3067\u3059\u3002\u59bb\u3068\u884c\u304d\u307e\u3059\u3002',
     'Daijoubu desu. Tsuma to ikimasu.',
@@ -94,15 +96,70 @@ function renderSteps() {
     'Salamat. Pero gusto kong kasama ang pamilya ko.'
   )}
   <button class="copy-btn" data-copy="decline">Copy Japanese text</button>
-  <p style="margin-top:12px">Sa hospital, sabihin: <strong>\u52b4\u707d\u3067\u3059 (Rousai desu)</strong></p>
-  <p>Humingi ng:</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3a: Tumawag muna sa hospital (mga 8:30-9:00 AM)</p>
+  <p>Wala kang schedule, kaya tumawag ka muna para mag-confirm na pwede kang pumunta:</p>
+  ${phrase(
+    '\u5148\u65e5\u6551\u6025\u3067\u53d7\u8a3a\u3057\u305f\u8005\u3067\u3059\u304c\u3001\u307e\u3060\u3081\u307e\u3044\u304c\u7d9a\u3044\u3066\u3044\u308b\u306e\u3067\u53d7\u8a3a\u3057\u305f\u3044\u3067\u3059\u3002\u4eca\u65e5\u884c\u3063\u3066\u3082\u5927\u4e08\u592b\u3067\u3059\u304b\uff1f',
+    'Senjitsu kyuukyuu de jushin shita mono desu ga, mada memai ga tsuzuite iru node jushin shitai desu. Kyou itte mo daijoubu desu ka?',
+    'Pumunta ako sa emergency kamakailan. May dizziness pa rin ako, gusto ko magpa-check ulit. Pwede ba akong pumunta ngayon?'
+  )}
+  <button class="copy-btn" data-copy="hospital-call">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:8px">Pwedeng sabihin nila: <strong>\u306f\u3044\u3001\u6765\u3066\u304f\u3060\u3055\u3044</strong> (Oo pumunta ka) o <strong>\u4e88\u7d04\u304c\u5fc5\u8981\u3067\u3059</strong> (Kailangan ng appointment &rarr; sila na mag-set ng schedule)</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3b: Pagdating sa hospital</p>
+  <p>Sa reception, sabihin:</p>
+  ${phrase(
+    '\u52b4\u707d\u3067\u3059\u3002\u4ed5\u4e8b\u4e2d\u306e\u4e8b\u6545\u3067\u602a\u6211\u3092\u3057\u307e\u3057\u305f\u3002',
+    'Rousai desu. Shigoto-chuu no jiko de kega wo shimashita.',
+    'Workers\u2019 comp. Na-injure ako sa work accident.'
+  )}
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3c: Privacy — Para hindi ma-contact si Yuta</p>
+  <p>Sabihin sa reception:</p>
+  ${phrase(
+    '\u4f1a\u793e\u306b\u306f\u9023\u7d61\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002\u500b\u4eba\u3067\u6765\u3066\u3044\u307e\u3059\u3002',
+    'Kaisha ni wa renraku shinaide kudasai. Kojin de kite imasu.',
+    'Huwag po kayong mag-contact sa company ko. Personal ang pagpunta ko.'
+  )}
+  <button class="copy-btn" data-copy="privacy">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:4px">Patient confidentiality — obligado silang sundin ito. Hindi sila pwedeng tumawag kay Yuta o sa company nang walang permission mo.</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3d: Sa doctor — I-report lahat ng symptoms</p>
+  <p>Sabihin LAHAT:</p>
   <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li><strong>\u8a3a\u65ad\u66f8 (Shindansho)</strong> \u2014 medical certificate \u2014 IKAW ANG PWEDENG KUMUHA NITO, hindi kailangan si Yuta</li>
-    <li>Referral sa <strong>\u8133\u795e\u7d4c\u5916\u79d1 (Neurologist)</strong> \u2014 para sa dizziness/head</li>
-    <li>Referral sa <strong>\u8033\u9f3b\u54bd\u5589\u79d1 (ENT)</strong> \u2014 para sa hearing</li>
+    <li>\u3081\u307e\u3044\u304c\u3057\u307e\u3059 (Memai ga shimasu) = Nahihilo</li>
+    <li>\u982d\u304c\u75db\u3044\u3067\u3059 (Atama ga itai desu) = Sumasakit ulo</li>
+    <li>\u8033\u304c\u805e\u3053\u3048\u306b\u304f\u3044\u3067\u3059 (Mimi ga kikoe nikui desu) = Hindi marinig ng maayos</li>
+    <li>\u819d\u304c\u75db\u3044\u3067\u3059 (Hiza ga itai desu) = Sumasakit tuhod</li>
+    <li>\u7720\u308c\u307e\u305b\u3093 (Nemuremasen) = Hindi makatulog</li>
+    <li>\u4e0d\u5b89\u3067\u3059 (Fuan desu) = Kinakabahan/Anxious</li>
   </ul>
-  <p>I-report LAHAT ng symptoms: dizziness, headache, hearing problem, knee pain, finger pain, can't sleep, anxiety</p>
-  <p style="color:var(--warning)">Bayad ng shindansho: ~\u00a53,000-5,000 (ire-reimburse sa rousai later)</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3e: Humingi ng Shindansho at Referrals</p>
+  <p>Habang nandun ka na, sabihin sa doctor:</p>
+  ${phrase(
+    '\u8a3a\u65ad\u66f8\u3092\u304a\u9858\u3044\u3057\u305f\u3044\u306e\u3067\u3059\u304c\u3002\u52b4\u707d\u3067\u4f7f\u3044\u307e\u3059\u3002',
+    'Shindansho wo onegai shitai no desu ga. Rousai de tsukaimasu.',
+    'Gusto ko po ng medical certificate. Para sa workers\u2019 comp.'
+  )}
+  ${phrase(
+    '\u8a3a\u65ad\u66f8\u306b\u300c\u4f11\u696d\u304c\u5fc5\u8981\u300d\u3068\u66f8\u3044\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f',
+    'Shindansho ni "kyuugyou ga hitsuyou" to kaite moraemasu ka?',
+    'Pwede bang isulat na kailangan ko ng rest from work?'
+  )}
+  <button class="copy-btn" data-copy="shindansho">Copy Japanese text</button>
+  <p style="margin-top:10px">Humingi rin ng referral:</p>
+  ${phrase(
+    '\u8133\u795e\u7d4c\u5916\u79d1\u3078\u306e\u7d39\u4ecb\u72b6\u3092\u304a\u9858\u3044\u3067\u304d\u307e\u3059\u304b\uff1f\u8033\u9f3b\u54bd\u5589\u79d1\u3082\u304a\u9858\u3044\u3057\u307e\u3059\u3002',
+    'Nou-shinkei-geka e no shoukai-jou wo onegai dekimasu ka? Jibi-inkou-ka mo onegai shimasu.',
+    'Pwede bang humingi ng referral sa neurologist? Pati ENT doctor.'
+  )}
+  <button class="copy-btn" data-copy="referral">Copy Japanese text</button>
+
+  <div class="highlight warn" style="margin-top:12px">
+    <strong>Bayad ng shindansho:</strong> ~\u00a53,000-5,000 yen. Ire-reimburse sa rousai later. IKAW ang pwedeng kumuha nito — hindi kailangan si Yuta.
+  </div>
 </div>
 
 <div class="step-card">
@@ -668,6 +725,10 @@ function render() {
   const copyTexts = {
     yuta: 'Yuta\u3055\u3093\u3001\u304a\u75b2\u308c\u69d8\u3067\u3059\u3002\u52b4\u707d\u306e\u624b\u7d9a\u304d\u3092\u9032\u3081\u3066\u304f\u308c\u3066\u3044\u308b\u3068\u306e\u3053\u3068\u3067\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u78ba\u8a8d\u306e\u305f\u3081\u3044\u304f\u3064\u304b\u304a\u805e\u304d\u3057\u305f\u3044\u306e\u3067\u3059\u304c\uff1a\n\n1) \u52b4\u707d\u306e\u7533\u8acb\u66f8\u985e\u306f\u3082\u3046\u63d0\u51fa\u3057\u307e\u3057\u305f\u304b\uff1f\n2) \u63d0\u51fa\u5148\u306e\u52b4\u50cd\u57fa\u6e96\u76e3\u7763\u7f72\u306f\u3069\u3053\u3067\u3059\u304b\uff1f\n3) \u53d7\u7406\u756a\u53f7\u304b\u63a7\u3048\u306e\u30b3\u30d4\u30fc\u3092\u3082\u3089\u3048\u307e\u3059\u304b\uff1f\n\n\u307e\u3060\u3081\u307e\u3044\u3068\u8074\u899a\u306e\u9055\u548c\u611f\u304c\u7d9a\u3044\u3066\u3044\u3066\u3001\u533b\u5e2b\u304b\u3089\u5c02\u9580\u533b\u3078\u306e\u7d39\u4ecb\u304c\u5fc5\u8981\u3068\u8a00\u308f\u308c\u3066\u3044\u307e\u3059\u3002\u4eca\u5f8c\u306e\u6cbb\u7642\u8cbb\u3082\u52b4\u707d\u3067\u5bfe\u5fdc\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002',
     decline: '\u5927\u4e08\u592b\u3067\u3059\u3002\u59bb\u3068\u884c\u304d\u307e\u3059\u3002\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3067\u3082\u5bb6\u65cf\u3068\u884c\u304d\u305f\u3044\u3067\u3059\u3002',
+    'hospital-call': '\u5148\u65e5\u6551\u6025\u3067\u53d7\u8a3a\u3057\u305f\u8005\u3067\u3059\u304c\u3001\u307e\u3060\u3081\u307e\u3044\u304c\u7d9a\u3044\u3066\u3044\u308b\u306e\u3067\u53d7\u8a3a\u3057\u305f\u3044\u3067\u3059\u3002\u4eca\u65e5\u884c\u3063\u3066\u3082\u5927\u4e08\u592b\u3067\u3059\u304b\uff1f',
+    privacy: '\u4f1a\u793e\u306b\u306f\u9023\u7d61\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002\u500b\u4eba\u3067\u6765\u3066\u3044\u307e\u3059\u3002',
+    shindansho: '\u8a3a\u65ad\u66f8\u3092\u304a\u9858\u3044\u3057\u305f\u3044\u306e\u3067\u3059\u304c\u3002\u52b4\u707d\u3067\u4f7f\u3044\u307e\u3059\u3002\u8a3a\u65ad\u66f8\u306b\u300c\u4f11\u696d\u304c\u5fc5\u8981\u300d\u3068\u66f8\u3044\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f',
+    referral: '\u8133\u795e\u7d4c\u5916\u79d1\u3078\u306e\u7d39\u4ecb\u72b6\u3092\u304a\u9858\u3044\u3067\u304d\u307e\u3059\u304b\uff1f\u8033\u9f3b\u54bd\u5589\u79d1\u3082\u304a\u9858\u3044\u3057\u307e\u3059\u3002',
   }
 
   app.querySelectorAll('.copy-btn').forEach(btn => {
