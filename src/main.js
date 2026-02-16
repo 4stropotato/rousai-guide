@@ -48,25 +48,112 @@ function renderSteps() {
   <p style="margin-top:8px;color:white"><strong>RULE: Si NAOMI ang isama mo sa hospital, HINDI si Yuta.</strong></p>
 </div>
 
-<div class="phase-header"><h3>PHASE 1: NGAYONG WEEK (Day 1-7)</h3><p>Immediate — Medical at FRESC muna</p></div>
+<div class="phase-header"><h3>BUKAS — TAMANG ORDER NG GAGAWIN (May Oras)</h3><p>Sundan ito ng eksakto para hindi maka-amoy si Yuta</p></div>
+
+<div class="highlight warn" style="margin-bottom:16px">
+  <strong>BAKIT ITO ANG ORDER:</strong><br>
+  Hospital MUNA bago Yuta — para makuha mo na ang shindansho at medical evidence BAGO mag-react si Yuta. Kung i-message mo muna si Yuta, baka pumunta siya sa hospital o mag-interfere. Kaya: <strong>hospital first, Yuta last.</strong>
+</div>
 
 <div class="step-card urgent">
   <div class="step-number">1</div>
-  <h4>Tawagan ang FRESC</h4>
-  <p><strong>Number: 0120-76-2029</strong> (FREE)</p>
-  <p>Sabihin: <strong>"Tagalog please. I had a work accident. I need help with rousai and a lawyer."</strong></p>
-  <p>Itanong mo:</p>
-  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li>Paano i-verify kung nag-file na ng rousai ang employer?</li>
-    <li>May ma-re-refer ba kayong libre na lawyer?</li>
-    <li>Ano ang susunod na steps ko?</li>
-  </ul>
+  <h4>8:30 AM — Tawagan ang Hospital</h4>
+  <p>Tumawag para mag-confirm na pwede kang pumunta ngayon:</p>
+  ${phrase(
+    '\u5148\u65e5\u6551\u6025\u3067\u53d7\u8a3a\u3057\u305f\u8005\u3067\u3059\u304c\u3001\u307e\u3060\u3081\u307e\u3044\u304c\u7d9a\u3044\u3066\u3044\u308b\u306e\u3067\u53d7\u8a3a\u3057\u305f\u3044\u3067\u3059\u3002\u4eca\u65e5\u884c\u3063\u3066\u3082\u5927\u4e08\u592b\u3067\u3059\u304b\uff1f',
+    'Senjitsu kyuukyuu de jushin shita mono desu ga, mada memai ga tsuzuite iru node jushin shitai desu. Kyou itte mo daijoubu desu ka?',
+    'Pumunta ako sa emergency kamakailan. May dizziness pa rin, gusto ko magpa-check. Pwede ba pumunta ngayon?'
+  )}
+  <button class="copy-btn" data-copy="hospital-call">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:8px">Kung sabihin nilang kailangan ng schedule &rarr; mag-set ka. Kung pwede pumunta &rarr; diretso na.</p>
 </div>
 
 <div class="step-card urgent">
   <div class="step-number">2</div>
-  <h4>I-send ang Verification Message kay Yuta</h4>
-  <p>Para may written record. I-send via LINE/email:</p>
+  <h4>9:00-11:00 AM — Pumunta sa Hospital KASAMA SI NAOMI</h4>
+  <p><strong>HUWAG sabihin kay Yuta na pupunta ka. Hindi niya kailangan malaman.</strong></p>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Sa reception:</p>
+  ${phrase(
+    '\u52b4\u707d\u3067\u3059\u3002\u4ed5\u4e8b\u4e2d\u306e\u4e8b\u6545\u3067\u602a\u6211\u3092\u3057\u307e\u3057\u305f\u3002',
+    'Rousai desu. Shigoto-chuu no jiko de kega wo shimashita.',
+    'Workers\u2019 comp ito. Na-injure ako sa work accident.'
+  )}
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Para hindi ma-contact si Yuta (sabihin sa reception):</p>
+  ${phrase(
+    '\u4f1a\u793e\u306b\u306f\u9023\u7d61\u3057\u306a\u3044\u3067\u304f\u3060\u3055\u3044\u3002\u500b\u4eba\u3067\u6765\u3066\u3044\u307e\u3059\u3002',
+    'Kaisha ni wa renraku shinaide kudasai. Kojin de kite imasu.',
+    'Huwag po i-contact ang company ko. Personal ang pagpunta ko.'
+  )}
+  <button class="copy-btn" data-copy="privacy">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:4px">Patient confidentiality — bawal nilang tawagan si Yuta nang walang permission mo.</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Sa doctor — I-report lahat ng symptoms:</p>
+  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
+    <li>\u3081\u307e\u3044\u304c\u3057\u307e\u3059 (Memai ga shimasu) = Nahihilo</li>
+    <li>\u982d\u304c\u75db\u3044\u3067\u3059 (Atama ga itai desu) = Sumasakit ulo</li>
+    <li>\u8033\u304c\u805e\u3053\u3048\u306b\u304f\u3044\u3067\u3059 (Mimi ga kikoe nikui desu) = Hindi marinig ng maayos</li>
+    <li>\u819d\u304c\u75db\u3044\u3067\u3059 (Hiza ga itai desu) = Sumasakit tuhod</li>
+    <li>\u7720\u308c\u307e\u305b\u3093 (Nemuremasen) = Hindi makatulog</li>
+    <li>\u4e0d\u5b89\u3067\u3059 (Fuan desu) = Kinakabahan</li>
+  </ul>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Humingi ng Shindansho:</p>
+  ${phrase(
+    '\u8a3a\u65ad\u66f8\u3092\u304a\u9858\u3044\u3057\u305f\u3044\u306e\u3067\u3059\u304c\u3002\u52b4\u707d\u3067\u4f7f\u3044\u307e\u3059\u3002\u8a3a\u65ad\u66f8\u306b\u300c\u4f11\u696d\u304c\u5fc5\u8981\u300d\u3068\u66f8\u3044\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f',
+    'Shindansho wo onegai shitai no desu ga. Rousai de tsukaimasu. Shindansho ni "kyuugyou ga hitsuyou" to kaite moraemasu ka?',
+    'Gusto ko po ng medical certificate. Para sa rousai. Pwede bang isulat na kailangan ko ng rest from work?'
+  )}
+  <button class="copy-btn" data-copy="shindansho">Copy Japanese text</button>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Humingi ng Specialist Referrals:</p>
+  ${phrase(
+    '\u8133\u795e\u7d4c\u5916\u79d1\u3078\u306e\u7d39\u4ecb\u72b6\u3092\u304a\u9858\u3044\u3067\u304d\u307e\u3059\u304b\uff1f\u8033\u9f3b\u54bd\u5589\u79d1\u3082\u304a\u9858\u3044\u3057\u307e\u3059\u3002',
+    'Nou-shinkei-geka e no shoukai-jou wo onegai dekimasu ka? Jibi-inkou-ka mo onegai shimasu.',
+    'Pwede bang humingi ng referral sa neurologist? Pati ENT doctor.'
+  )}
+  <button class="copy-btn" data-copy="referral">Copy Japanese text</button>
+
+  <div class="highlight warn" style="margin-top:12px">
+    <strong>Bayad ng shindansho:</strong> ~\u00a53,000-5,000 yen. Ire-reimburse sa rousai later.
+  </div>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Kung mag-insist si Yuta na sasama:</p>
+  ${phrase(
+    '\u5927\u4e08\u592b\u3067\u3059\u3002\u59bb\u3068\u884c\u304d\u307e\u3059\u3002',
+    'Daijoubu desu. Tsuma to ikimasu.',
+    'Okay lang. Kasama ko ang asawa ko.'
+  )}
+  <button class="copy-btn" data-copy="decline">Copy Japanese text</button>
+</div>
+
+<div class="step-card urgent">
+  <div class="step-number">3</div>
+  <h4>Pagkatapos ng Hospital — Tawagan ang FRESC</h4>
+  <p><strong>Number: 0120-76-2029</strong> (FREE, open 9:00-17:00 weekdays)</p>
+  <p>Pwede mong tawagan habang pauwi ka na o pagdating sa bahay.</p>
+  <p>Sabihin: <strong>"Tagalog please. I had a work accident. I need help with rousai and a lawyer."</strong></p>
+  <p>Itanong mo:</p>
+  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
+    <li>Paano i-verify kung nag-file na ng rousai ang employer ko?</li>
+    <li>May ma-re-refer ba kayong libre na lawyer?</li>
+    <li>Ano ang susunod na steps ko?</li>
+  </ul>
+  <div class="highlight">Sila na ang mag-guide sa'yo sa lahat ng susunod. Hindi mo kailangang isipin lahat — trabaho nila yan.</div>
+</div>
+
+<div class="step-card">
+  <div class="step-number">4</div>
+  <h4>LAST — I-send ang Message kay Yuta (Pagkatapos ng Hospital at FRESC)</h4>
+  <p><strong>Ito ang HULI mong gawin — PAGKATAPOS na makuha ang shindansho at makausap ang FRESC.</strong></p>
+  <p>Bakit last? Kasi kung i-message mo muna siya, baka:</p>
+  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
+    <li>Pumunta siya sa hospital para bantayan ka</li>
+    <li>Mag-interfere sa shindansho</li>
+    <li>Mag-panic at i-pressure ka</li>
+  </ul>
+  <p style="margin-top:10px">Pag ready ka na (may shindansho na, nakausap na FRESC), saka mo i-send sa LINE/email:</p>
   ${phrase(
     'Yuta\u3055\u3093\u3001\u304a\u75b2\u308c\u69d8\u3067\u3059\u3002\u52b4\u707d\u306e\u624b\u7d9a\u304d\u3092\u9032\u3081\u3066\u304f\u308c\u3066\u3044\u308b\u3068\u306e\u3053\u3068\u3067\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u78ba\u8a8d\u306e\u305f\u3081\u3044\u304f\u3064\u304b\u304a\u805e\u304d\u3057\u305f\u3044\u306e\u3067\u3059\u304c\uff1a1) \u52b4\u707d\u306e\u7533\u8acb\u66f8\u985e\u306f\u3082\u3046\u63d0\u51fa\u3057\u307e\u3057\u305f\u304b\uff1f 2) \u63d0\u51fa\u5148\u306e\u52b4\u50cd\u57fa\u6e96\u76e3\u7763\u7f72\u306f\u3069\u3053\u3067\u3059\u304b\uff1f 3) \u53d7\u7406\u756a\u53f7\u304b\u63a7\u3048\u306e\u30b3\u30d4\u30fc\u3092\u3082\u3089\u3048\u307e\u3059\u304b\uff1f',
     'Yuta-san, otsukaresama desu. Rousai no tetsuzuki wo susumete kurete iru to no koto de, arigatou gozaimasu. Kakunin no tame ikutsuka okiki shitai no desu ga: 1) Rousai no shinsei shorui wa mou teishutsu shimashita ka? 2) Teishutsu-saki no roudou kijun kantoku-sho wa doko desu ka? 3) Juri-bangou ka hikae no copy wo moraemasu ka?',
