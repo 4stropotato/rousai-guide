@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const u of document.querySelectorAll('link[rel="modulepreload"]'))s(u);new MutationObserver(u=>{for(const n of u)if(n.type==="childList")for(const d of n.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&s(d)}).observe(document,{childList:!0,subtree:!0});function a(u){const n={};return u.integrity&&(n.integrity=u.integrity),u.referrerPolicy&&(n.referrerPolicy=u.referrerPolicy),u.crossOrigin==="use-credentials"?n.credentials="include":u.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function s(u){if(u.ep)return;u.ep=!0;const n=a(u);fetch(u.href,n)}})();const c=[{id:"steps",label:"Steps"},{id:"convo",label:"Phrases"},{id:"money",label:"Compensation"},{id:"lawyer",label:"Lawyer"},{id:"checklist",label:"Checklist"},{id:"contacts",label:"Contacts"}],r="rousai-checklist";function l(){try{return JSON.parse(localStorage.getItem(r)||"{}")}catch{return{}}}function g(i,t){const a=l();a[i]=t,localStorage.setItem(r,JSON.stringify(a))}function m(i,t){navigator.clipboard.writeText(i).then(()=>{t.classList.add("copied"),t.textContent="Copied!",setTimeout(()=>{t.classList.remove("copied"),t.textContent="Copy Japanese text"},2e3)})}function o(i,t,a){return`<div class="phrase-box"><div class="jp">${i}</div><div class="romaji">${t}</div><div class="meaning">${a}</div></div>`}function e(i,t,a,s,u){return`<div class="convo-line ${i}"><div class="convo-label">${t}</div><div class="jp">${a}</div>${s?`<div class="romaji">${s}</div>`:""}<div class="meaning">${u}</div></div>`}function p(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const u of document.querySelectorAll('link[rel="modulepreload"]'))s(u);new MutationObserver(u=>{for(const n of u)if(n.type==="childList")for(const d of n.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&s(d)}).observe(document,{childList:!0,subtree:!0});function a(u){const n={};return u.integrity&&(n.integrity=u.integrity),u.referrerPolicy&&(n.referrerPolicy=u.referrerPolicy),u.crossOrigin==="use-credentials"?n.credentials="include":u.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function s(u){if(u.ep)return;u.ep=!0;const n=a(u);fetch(u.href,n)}})();const g=[{id:"steps",label:"Steps"},{id:"convo",label:"Phrases"},{id:"money",label:"Compensation"},{id:"lawyer",label:"Lawyer"},{id:"checklist",label:"Checklist"},{id:"contacts",label:"Contacts"}],r="rousai-checklist";function l(){try{return JSON.parse(localStorage.getItem(r)||"{}")}catch{return{}}}function c(i,t){const a=l();a[i]=t,localStorage.setItem(r,JSON.stringify(a))}function m(i,t){navigator.clipboard.writeText(i).then(()=>{t.classList.add("copied"),t.textContent="Copied!",setTimeout(()=>{t.classList.remove("copied"),t.textContent="Copy Japanese text"},2e3)})}function o(i,t,a){return`<div class="phrase-box"><div class="jp">${i}</div><div class="romaji">${t}</div><div class="meaning">${a}</div></div>`}function e(i,t,a,s,u){return`<div class="convo-line ${i}"><div class="convo-label">${t}</div><div class="jp">${a}</div>${s?`<div class="romaji">${s}</div>`:""}<div class="meaning">${u}</div></div>`}function p(){return`
 <div class="warning-box" style="margin-bottom:20px">
   <h4>BABALA TUNGKOL KAY YUTA</h4>
   <p style="margin-bottom:8px">Ang behavior ni Yuta ay RED FLAG. Hindi siya nag-aalaga sa'yo — <strong>binabantayan ka niya</strong>:</p>
@@ -12,25 +12,88 @@
   <p style="margin-top:8px;color:white"><strong>RULE: Si NAOMI ang isama mo sa hospital, HINDI si Yuta.</strong></p>
 </div>
 
-<div class="phase-header"><h3>PHASE 1: NGAYONG WEEK (Day 1-7)</h3><p>Immediate — Medical at FRESC muna</p></div>
+<div class="phase-header"><h3>BUKAS — TAMANG ORDER NG GAGAWIN (May Oras)</h3><p>Sundan ito ng eksakto para hindi maka-amoy si Yuta</p></div>
+
+<div class="highlight warn" style="margin-bottom:16px">
+  <strong>BAKIT ITO ANG ORDER:</strong><br>
+  Hospital MUNA bago Yuta — para makuha mo na ang shindansho at medical evidence BAGO mag-react si Yuta. Kung i-message mo muna si Yuta, baka pumunta siya sa hospital o mag-interfere. Kaya: <strong>hospital first, Yuta last.</strong>
+</div>
 
 <div class="step-card urgent">
   <div class="step-number">1</div>
-  <h4>Tawagan ang FRESC</h4>
-  <p><strong>Number: 0120-76-2029</strong> (FREE)</p>
-  <p>Sabihin: <strong>"Tagalog please. I had a work accident. I need help with rousai and a lawyer."</strong></p>
-  <p>Itanong mo:</p>
-  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li>Paano i-verify kung nag-file na ng rousai ang employer?</li>
-    <li>May ma-re-refer ba kayong libre na lawyer?</li>
-    <li>Ano ang susunod na steps ko?</li>
-  </ul>
+  <h4>8:30 AM — Tawagan ang Hospital</h4>
+  <p>Tumawag para mag-confirm na pwede kang pumunta ngayon:</p>
+  ${o("先日救急で受診した者ですが、まだめまいが続いているので受診したいです。今日行っても大丈夫ですか？","Senjitsu kyuukyuu de jushin shita mono desu ga, mada memai ga tsuzuite iru node jushin shitai desu. Kyou itte mo daijoubu desu ka?","Pumunta ako sa emergency kamakailan. May dizziness pa rin, gusto ko magpa-check. Pwede ba pumunta ngayon?")}
+  <button class="copy-btn" data-copy="hospital-call">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:8px">Kung sabihin nilang kailangan ng schedule &rarr; mag-set ka. Kung pwede pumunta &rarr; diretso na.</p>
 </div>
 
 <div class="step-card urgent">
   <div class="step-number">2</div>
-  <h4>I-send ang Verification Message kay Yuta</h4>
-  <p>Para may written record. I-send via LINE/email:</p>
+  <h4>9:00-11:00 AM — Pumunta sa Hospital KASAMA SI NAOMI</h4>
+  <p><strong>HUWAG sabihin kay Yuta na pupunta ka. Hindi niya kailangan malaman.</strong></p>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Sa reception:</p>
+  ${o("労災です。仕事中の事故で怪我をしました。","Rousai desu. Shigoto-chuu no jiko de kega wo shimashita.","Workers’ comp ito. Na-injure ako sa work accident.")}
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Para hindi ma-contact si Yuta (sabihin sa reception):</p>
+  ${o("会社には連絡しないでください。個人で来ています。","Kaisha ni wa renraku shinaide kudasai. Kojin de kite imasu.","Huwag po i-contact ang company ko. Personal ang pagpunta ko.")}
+  <button class="copy-btn" data-copy="privacy">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:4px">Patient confidentiality — bawal nilang tawagan si Yuta nang walang permission mo.</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Sa doctor — I-report lahat ng symptoms:</p>
+  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
+    <li>めまいがします (Memai ga shimasu) = Nahihilo</li>
+    <li>頭が痛いです (Atama ga itai desu) = Sumasakit ulo</li>
+    <li>耳が聞こえにくいです (Mimi ga kikoe nikui desu) = Hindi marinig ng maayos</li>
+    <li>膝が痛いです (Hiza ga itai desu) = Sumasakit tuhod</li>
+    <li>眠れません (Nemuremasen) = Hindi makatulog</li>
+    <li>不安です (Fuan desu) = Kinakabahan</li>
+  </ul>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Humingi ng Shindansho:</p>
+  ${o("診断書をお願いしたいのですが。労災で使います。診断書に「休業が必要」と書いてもらえますか？",'Shindansho wo onegai shitai no desu ga. Rousai de tsukaimasu. Shindansho ni "kyuugyou ga hitsuyou" to kaite moraemasu ka?',"Gusto ko po ng medical certificate. Para sa rousai. Pwede bang isulat na kailangan ko ng rest from work?")}
+  <button class="copy-btn" data-copy="shindansho">Copy Japanese text</button>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Humingi ng Specialist Referrals:</p>
+  ${o("脳神経外科への紹介状をお願いできますか？耳鼻咽喉科もお願いします。","Nou-shinkei-geka e no shoukai-jou wo onegai dekimasu ka? Jibi-inkou-ka mo onegai shimasu.","Pwede bang humingi ng referral sa neurologist? Pati ENT doctor.")}
+  <button class="copy-btn" data-copy="referral">Copy Japanese text</button>
+
+  <div class="highlight warn" style="margin-top:12px">
+    <strong>Bayad ng shindansho:</strong> ~¥3,000-5,000 yen. Ire-reimburse sa rousai later.
+  </div>
+
+  <p style="color:var(--accent);font-weight:600;margin:12px 0 6px">Kung mag-insist si Yuta na sasama:</p>
+  ${o("大丈夫です。妻と行きます。","Daijoubu desu. Tsuma to ikimasu.","Okay lang. Kasama ko ang asawa ko.")}
+  <button class="copy-btn" data-copy="decline">Copy Japanese text</button>
+</div>
+
+<div class="step-card urgent">
+  <div class="step-number">3</div>
+  <h4>Pagkatapos ng Hospital — Tawagan ang FRESC</h4>
+  <p><strong>Number: 0120-76-2029</strong> (FREE, open 9:00-17:00 weekdays)</p>
+  <p>Pwede mong tawagan habang pauwi ka na o pagdating sa bahay.</p>
+  <p>Sabihin: <strong>"Tagalog please. I had a work accident. I need help with rousai and a lawyer."</strong></p>
+  <p>Itanong mo:</p>
+  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
+    <li>Paano i-verify kung nag-file na ng rousai ang employer ko?</li>
+    <li>May ma-re-refer ba kayong libre na lawyer?</li>
+    <li>Ano ang susunod na steps ko?</li>
+  </ul>
+  <div class="highlight">Sila na ang mag-guide sa'yo sa lahat ng susunod. Hindi mo kailangang isipin lahat — trabaho nila yan.</div>
+</div>
+
+<div class="step-card">
+  <div class="step-number">4</div>
+  <h4>LAST — I-send ang Message kay Yuta (Pagkatapos ng Hospital at FRESC)</h4>
+  <p><strong>Ito ang HULI mong gawin — PAGKATAPOS na makuha ang shindansho at makausap ang FRESC.</strong></p>
+  <p>Bakit last? Kasi kung i-message mo muna siya, baka:</p>
+  <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
+    <li>Pumunta siya sa hospital para bantayan ka</li>
+    <li>Mag-interfere sa shindansho</li>
+    <li>Mag-panic at i-pressure ka</li>
+  </ul>
+  <p style="margin-top:10px">Pag ready ka na (may shindansho na, nakausap na FRESC), saka mo i-send sa LINE/email:</p>
   ${o("Yutaさん、お疲れ様です。労災の手続きを進めてくれているとのことで、ありがとうございます。確認のためいくつかお聞きしたいのですが：1) 労災の申請書類はもう提出しましたか？ 2) 提出先の労働基準監督署はどこですか？ 3) 受理番号か控えのコピーをもらえますか？","Yuta-san, otsukaresama desu. Rousai no tetsuzuki wo susumete kurete iru to no koto de, arigatou gozaimasu. Kakunin no tame ikutsuka okiki shitai no desu ga: 1) Rousai no shinsei shorui wa mou teishutsu shimashita ka? 2) Teishutsu-saki no roudou kijun kantoku-sho wa doko desu ka? 3) Juri-bangou ka hikae no copy wo moraemasu ka?","Salamat sa pag-asikaso ng rousai. Para ma-confirm: 1) Na-submit na ba ang forms? 2) Saang Labor Office? 3) Pwede bang makakuha ng receipt/reference number?")}
   <button class="copy-btn" data-copy="yuta">Copy Japanese text</button>
   <div class="highlight danger" style="margin-top:12px">I-SCREENSHOT ang reply niya. Ito ang evidence mo.</div>
@@ -552,7 +615,7 @@
 </div>
 
 <div class="nav">
-  ${c.map(a=>`<button class="nav-btn ${a.id==="steps"?"active":""}" data-tab="${a.id}">${a.label}</button>`).join("")}
+  ${g.map(a=>`<button class="nav-btn ${a.id==="steps"?"active":""}" data-tab="${a.id}">${a.label}</button>`).join("")}
 </div>
 
 <div class="section active" data-section="steps">${p()}</div>
@@ -561,7 +624,7 @@
 <div class="section" data-section="lawyer">${f()}</div>
 <div class="section" data-section="checklist">${y()}</div>
 <div class="section" data-section="contacts">${k()}</div>
-`,i.querySelectorAll(".nav-btn").forEach(a=>{a.addEventListener("click",()=>{i.querySelectorAll(".nav-btn").forEach(s=>s.classList.remove("active")),i.querySelectorAll(".section").forEach(s=>s.classList.remove("active")),a.classList.add("active"),i.querySelector(`[data-section="${a.dataset.tab}"]`).classList.add("active")})}),i.querySelectorAll(".checklist li[data-id]").forEach(a=>{a.addEventListener("click",()=>{const s=a.dataset.id,n=a.querySelector(".check-box").classList.toggle("checked");a.classList.toggle("done",n),g(s,n)})});const t={yuta:`Yutaさん、お疲れ様です。労災の手続きを進めてくれているとのことで、ありがとうございます。確認のためいくつかお聞きしたいのですが：
+`,i.querySelectorAll(".nav-btn").forEach(a=>{a.addEventListener("click",()=>{i.querySelectorAll(".nav-btn").forEach(s=>s.classList.remove("active")),i.querySelectorAll(".section").forEach(s=>s.classList.remove("active")),a.classList.add("active"),i.querySelector(`[data-section="${a.dataset.tab}"]`).classList.add("active")})}),i.querySelectorAll(".checklist li[data-id]").forEach(a=>{a.addEventListener("click",()=>{const s=a.dataset.id,n=a.querySelector(".check-box").classList.toggle("checked");a.classList.toggle("done",n),c(s,n)})});const t={yuta:`Yutaさん、お疲れ様です。労災の手続きを進めてくれているとのことで、ありがとうございます。確認のためいくつかお聞きしたいのですが：
 
 1) 労災の申請書類はもう提出しましたか？
 2) 提出先の労働基準監督署はどこですか？
