@@ -1,4 +1,4 @@
-(function(){const u=document.createElement("link").relList;if(u&&u.supports&&u.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))s(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const d of n.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&s(d)}).observe(document,{childList:!0,subtree:!0});function a(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function s(t){if(t.ep)return;t.ep=!0;const n=a(t);fetch(t.href,n)}})();const c=[{id:"steps",label:"Steps"},{id:"convo",label:"Phrases"},{id:"money",label:"Compensation"},{id:"lawyer",label:"Lawyer"},{id:"checklist",label:"Checklist"},{id:"contacts",label:"Contacts"}],r="rousai-checklist";function l(){try{return JSON.parse(localStorage.getItem(r)||"{}")}catch{return{}}}function g(i,u){const a=l();a[i]=u,localStorage.setItem(r,JSON.stringify(a))}function m(i,u){navigator.clipboard.writeText(i).then(()=>{u.classList.add("copied"),u.textContent="Copied!",setTimeout(()=>{u.classList.remove("copied"),u.textContent="Copy Japanese text"},2e3)})}function o(i,u,a){return`<div class="phrase-box"><div class="jp">${i}</div><div class="romaji">${u}</div><div class="meaning">${a}</div></div>`}function e(i,u,a,s,t){return`<div class="convo-line ${i}"><div class="convo-label">${u}</div><div class="jp">${a}</div>${s?`<div class="romaji">${s}</div>`:""}<div class="meaning">${t}</div></div>`}function p(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const u of document.querySelectorAll('link[rel="modulepreload"]'))s(u);new MutationObserver(u=>{for(const n of u)if(n.type==="childList")for(const d of n.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&s(d)}).observe(document,{childList:!0,subtree:!0});function a(u){const n={};return u.integrity&&(n.integrity=u.integrity),u.referrerPolicy&&(n.referrerPolicy=u.referrerPolicy),u.crossOrigin==="use-credentials"?n.credentials="include":u.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function s(u){if(u.ep)return;u.ep=!0;const n=a(u);fetch(u.href,n)}})();const c=[{id:"steps",label:"Steps"},{id:"convo",label:"Phrases"},{id:"money",label:"Compensation"},{id:"lawyer",label:"Lawyer"},{id:"checklist",label:"Checklist"},{id:"contacts",label:"Contacts"}],r="rousai-checklist";function l(){try{return JSON.parse(localStorage.getItem(r)||"{}")}catch{return{}}}function g(i,t){const a=l();a[i]=t,localStorage.setItem(r,JSON.stringify(a))}function m(i,t){navigator.clipboard.writeText(i).then(()=>{t.classList.add("copied"),t.textContent="Copied!",setTimeout(()=>{t.classList.remove("copied"),t.textContent="Copy Japanese text"},2e3)})}function o(i,t,a){return`<div class="phrase-box"><div class="jp">${i}</div><div class="romaji">${t}</div><div class="meaning">${a}</div></div>`}function e(i,t,a,s,u){return`<div class="convo-line ${i}"><div class="convo-label">${t}</div><div class="jp">${a}</div>${s?`<div class="romaji">${s}</div>`:""}<div class="meaning">${u}</div></div>`}function p(){return`
 <div class="warning-box" style="margin-bottom:20px">
   <h4>BABALA TUNGKOL KAY YUTA</h4>
   <p style="margin-bottom:8px">Ang behavior ni Yuta ay RED FLAG. Hindi siya nag-aalaga sa'yo — <strong>binabantayan ka niya</strong>:</p>
@@ -39,22 +39,55 @@
 <div class="step-card urgent">
   <div class="step-number">3</div>
   <h4>Bumalik sa Hospital — KASAMA SI NAOMI, HINDI SI YUTA</h4>
+
   <div class="highlight danger" style="margin-bottom:10px">
-    <strong>Si Naomi (asawa mo) ang isama mo, HINDI si Yuta.</strong><br>
-    Kung mag-insist si Yuta, sabihin mo:
+    <strong>Si Naomi (asawa mo) ang isama mo, HINDI si Yuta.</strong> Hindi mo kailangan sabihin kay Yuta na pupunta ka. Karapatan mo bilang pasyente.
   </div>
+
+  <p style="color:var(--accent);font-weight:600;margin-bottom:8px">Kung mag-insist si Yuta na sasama siya:</p>
   ${o("大丈夫です。妻と行きます。","Daijoubu desu. Tsuma to ikimasu.","Okay lang. Kasama ko ang asawa ko.")}
   ${o("ありがとうございます。でも家族と行きたいです。","Arigatou gozaimasu. Demo kazoku to ikitai desu.","Salamat. Pero gusto kong kasama ang pamilya ko.")}
   <button class="copy-btn" data-copy="decline">Copy Japanese text</button>
-  <p style="margin-top:12px">Sa hospital, sabihin: <strong>労災です (Rousai desu)</strong></p>
-  <p>Humingi ng:</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3a: Tumawag muna sa hospital (mga 8:30-9:00 AM)</p>
+  <p>Wala kang schedule, kaya tumawag ka muna para mag-confirm na pwede kang pumunta:</p>
+  ${o("先日救急で受診した者ですが、まだめまいが続いているので受診したいです。今日行っても大丈夫ですか？","Senjitsu kyuukyuu de jushin shita mono desu ga, mada memai ga tsuzuite iru node jushin shitai desu. Kyou itte mo daijoubu desu ka?","Pumunta ako sa emergency kamakailan. May dizziness pa rin ako, gusto ko magpa-check ulit. Pwede ba akong pumunta ngayon?")}
+  <button class="copy-btn" data-copy="hospital-call">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:8px">Pwedeng sabihin nila: <strong>はい、来てください</strong> (Oo pumunta ka) o <strong>予約が必要です</strong> (Kailangan ng appointment &rarr; sila na mag-set ng schedule)</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3b: Pagdating sa hospital</p>
+  <p>Sa reception, sabihin:</p>
+  ${o("労災です。仕事中の事故で怪我をしました。","Rousai desu. Shigoto-chuu no jiko de kega wo shimashita.","Workers’ comp. Na-injure ako sa work accident.")}
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3c: Privacy — Para hindi ma-contact si Yuta</p>
+  <p>Sabihin sa reception:</p>
+  ${o("会社には連絡しないでください。個人で来ています。","Kaisha ni wa renraku shinaide kudasai. Kojin de kite imasu.","Huwag po kayong mag-contact sa company ko. Personal ang pagpunta ko.")}
+  <button class="copy-btn" data-copy="privacy">Copy Japanese text</button>
+  <p style="color:var(--text-dim);font-size:0.85rem;margin-top:4px">Patient confidentiality — obligado silang sundin ito. Hindi sila pwedeng tumawag kay Yuta o sa company nang walang permission mo.</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3d: Sa doctor — I-report lahat ng symptoms</p>
+  <p>Sabihin LAHAT:</p>
   <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li><strong>診断書 (Shindansho)</strong> — medical certificate — IKAW ANG PWEDENG KUMUHA NITO, hindi kailangan si Yuta</li>
-    <li>Referral sa <strong>脳神経外科 (Neurologist)</strong> — para sa dizziness/head</li>
-    <li>Referral sa <strong>耳鼻咽喉科 (ENT)</strong> — para sa hearing</li>
+    <li>めまいがします (Memai ga shimasu) = Nahihilo</li>
+    <li>頭が痛いです (Atama ga itai desu) = Sumasakit ulo</li>
+    <li>耳が聞こえにくいです (Mimi ga kikoe nikui desu) = Hindi marinig ng maayos</li>
+    <li>膝が痛いです (Hiza ga itai desu) = Sumasakit tuhod</li>
+    <li>眠れません (Nemuremasen) = Hindi makatulog</li>
+    <li>不安です (Fuan desu) = Kinakabahan/Anxious</li>
   </ul>
-  <p>I-report LAHAT ng symptoms: dizziness, headache, hearing problem, knee pain, finger pain, can't sleep, anxiety</p>
-  <p style="color:var(--warning)">Bayad ng shindansho: ~¥3,000-5,000 (ire-reimburse sa rousai later)</p>
+
+  <p style="color:var(--accent);font-weight:600;margin:16px 0 8px">STEP 3e: Humingi ng Shindansho at Referrals</p>
+  <p>Habang nandun ka na, sabihin sa doctor:</p>
+  ${o("診断書をお願いしたいのですが。労災で使います。","Shindansho wo onegai shitai no desu ga. Rousai de tsukaimasu.","Gusto ko po ng medical certificate. Para sa workers’ comp.")}
+  ${o("診断書に「休業が必要」と書いてもらえますか？",'Shindansho ni "kyuugyou ga hitsuyou" to kaite moraemasu ka?',"Pwede bang isulat na kailangan ko ng rest from work?")}
+  <button class="copy-btn" data-copy="shindansho">Copy Japanese text</button>
+  <p style="margin-top:10px">Humingi rin ng referral:</p>
+  ${o("脳神経外科への紹介状をお願いできますか？耳鼻咽喉科もお願いします。","Nou-shinkei-geka e no shoukai-jou wo onegai dekimasu ka? Jibi-inkou-ka mo onegai shimasu.","Pwede bang humingi ng referral sa neurologist? Pati ENT doctor.")}
+  <button class="copy-btn" data-copy="referral">Copy Japanese text</button>
+
+  <div class="highlight warn" style="margin-top:12px">
+    <strong>Bayad ng shindansho:</strong> ~¥3,000-5,000 yen. Ire-reimburse sa rousai later. IKAW ang pwedeng kumuha nito — hindi kailangan si Yuta.
+  </div>
 </div>
 
 <div class="step-card">
@@ -442,7 +475,7 @@
     <li>Kung i-pressure ka, sabihin lang: まず弁護士に相談します (Mazu bengoshi ni soudan shimasu) = "Magpa-consult muna ako sa lawyer"</li>
   </ul>
 </div>
-`}function y(){const i=[{id:"c1",text:'Tawagan FRESC (0120-76-2029) — "Tagalog please"',phase:"Week 1"},{id:"c2",text:"I-send verification message kay Yuta (LINE/email)",phase:"Week 1"},{id:"c3",text:"I-screenshot ang reply ni Yuta",phase:"Week 1"},{id:"c4",text:'Bumalik sa hospital — sabihin "Rousai desu"',phase:"Week 1"},{id:"c5",text:"Kumuha ng Shindansho (medical certificate)",phase:"Week 1"},{id:"c6",text:"Humingi ng referral sa Neurologist",phase:"Week 1"},{id:"c7",text:"Humingi ng referral sa ENT doctor",phase:"Week 1"},{id:"c8",text:"Kumuha ng photos ng injuries",phase:"Week 1"},{id:"c9",text:"Kolektahin payslips (last 3 months)",phase:"Week 1"},{id:"c10",text:"I-verify sa Labor Office na na-file ang rousai",phase:"Week 2"},{id:"c11",text:"Pumunta sa Neurologist",phase:"Week 2"},{id:"c12",text:"Pumunta sa ENT — hearing test",phase:"Week 2"},{id:"c13",text:"Kumuha ng lawyer (via FRESC o Houterasu)",phase:"Week 2-3"},{id:"c14",text:"Lawyer files civil damages claim",phase:"Week 3-4"},{id:"c15",text:"Regular hospital visits (every 1-2 weeks)",phase:"Ongoing"},{id:"c16",text:"I-report lahat ng symptoms every visit",phase:"Ongoing"},{id:"c17",text:"I-save lahat ng receipts at documents",phase:"Ongoing"},{id:"c18",text:"Disability assessment (kung may permanent symptoms)",phase:"Month 6+"}],u=l();let a='<h2 class="section-title">Progress Checklist</h2>';a+='<p style="color:var(--text-dim);margin-bottom:16px;font-size:0.9rem">I-click ang box para i-mark as done. Naka-save ito sa phone/browser mo.</p>',a+='<div class="card"><ul class="checklist">';let s="";for(const t of i){t.phase!==s&&(s=t.phase,a+=`<li style="border-bottom:none;padding:4px 0"><strong style="color:var(--accent);font-size:0.8rem">${s}</strong></li>`);const n=u[t.id];a+=`<li class="${n?"done":""}" data-id="${t.id}"><div class="check-box ${n?"checked":""}"></div><span>${t.text}</span></li>`}return a+="</ul></div>",a+=`<div class="warning-box">
+`}function y(){const i=[{id:"c1",text:'Tawagan FRESC (0120-76-2029) — "Tagalog please"',phase:"Week 1"},{id:"c2",text:"I-send verification message kay Yuta (LINE/email)",phase:"Week 1"},{id:"c3",text:"I-screenshot ang reply ni Yuta",phase:"Week 1"},{id:"c4",text:'Bumalik sa hospital — sabihin "Rousai desu"',phase:"Week 1"},{id:"c5",text:"Kumuha ng Shindansho (medical certificate)",phase:"Week 1"},{id:"c6",text:"Humingi ng referral sa Neurologist",phase:"Week 1"},{id:"c7",text:"Humingi ng referral sa ENT doctor",phase:"Week 1"},{id:"c8",text:"Kumuha ng photos ng injuries",phase:"Week 1"},{id:"c9",text:"Kolektahin payslips (last 3 months)",phase:"Week 1"},{id:"c10",text:"I-verify sa Labor Office na na-file ang rousai",phase:"Week 2"},{id:"c11",text:"Pumunta sa Neurologist",phase:"Week 2"},{id:"c12",text:"Pumunta sa ENT — hearing test",phase:"Week 2"},{id:"c13",text:"Kumuha ng lawyer (via FRESC o Houterasu)",phase:"Week 2-3"},{id:"c14",text:"Lawyer files civil damages claim",phase:"Week 3-4"},{id:"c15",text:"Regular hospital visits (every 1-2 weeks)",phase:"Ongoing"},{id:"c16",text:"I-report lahat ng symptoms every visit",phase:"Ongoing"},{id:"c17",text:"I-save lahat ng receipts at documents",phase:"Ongoing"},{id:"c18",text:"Disability assessment (kung may permanent symptoms)",phase:"Month 6+"}],t=l();let a='<h2 class="section-title">Progress Checklist</h2>';a+='<p style="color:var(--text-dim);margin-bottom:16px;font-size:0.9rem">I-click ang box para i-mark as done. Naka-save ito sa phone/browser mo.</p>',a+='<div class="card"><ul class="checklist">';let s="";for(const u of i){u.phase!==s&&(s=u.phase,a+=`<li style="border-bottom:none;padding:4px 0"><strong style="color:var(--accent);font-size:0.8rem">${s}</strong></li>`);const n=t[u.id];a+=`<li class="${n?"done":""}" data-id="${u.id}"><div class="check-box ${n?"checked":""}"></div><span>${u.text}</span></li>`}return a+="</ul></div>",a+=`<div class="warning-box">
     <h4>HUWAG KALIMUTAN</h4>
     <ul>
       <li>HUWAG mag-sign ng settlement/waiver nang walang lawyer</li>
@@ -450,7 +483,7 @@
       <li>HUWAG sabihing "okay na ako" sa doctor kung hindi pa talaga</li>
       <li>Lahat ng communication kay Yuta = IN WRITING (LINE/email)</li>
     </ul>
-  </div>`,a}function v(){return`
+  </div>`,a}function k(){return`
 <h2 class="section-title">Important Contacts</h2>
 
 <div class="card" style="border-left:4px solid var(--danger)">
@@ -506,7 +539,7 @@
   </table></div>
   <div class="highlight ok">Hindi pa huli. Pero mas maaga ka kumilos, mas malakas ang case mo.</div>
 </div>
-`}function k(){const i=document.querySelector("#app");i.innerHTML=`
+`}function v(){const i=document.querySelector("#app");i.innerHTML=`
 <div class="header">
   <h1>Work Accident Rousai Guide</h1>
   <p>Step-by-step na gabay para sa workers' compensation claim sa Japan</p>
@@ -527,11 +560,11 @@
 <div class="section" data-section="money">${b()}</div>
 <div class="section" data-section="lawyer">${f()}</div>
 <div class="section" data-section="checklist">${y()}</div>
-<div class="section" data-section="contacts">${v()}</div>
-`,i.querySelectorAll(".nav-btn").forEach(a=>{a.addEventListener("click",()=>{i.querySelectorAll(".nav-btn").forEach(s=>s.classList.remove("active")),i.querySelectorAll(".section").forEach(s=>s.classList.remove("active")),a.classList.add("active"),i.querySelector(`[data-section="${a.dataset.tab}"]`).classList.add("active")})}),i.querySelectorAll(".checklist li[data-id]").forEach(a=>{a.addEventListener("click",()=>{const s=a.dataset.id,n=a.querySelector(".check-box").classList.toggle("checked");a.classList.toggle("done",n),g(s,n)})});const u={yuta:`Yutaさん、お疲れ様です。労災の手続きを進めてくれているとのことで、ありがとうございます。確認のためいくつかお聞きしたいのですが：
+<div class="section" data-section="contacts">${k()}</div>
+`,i.querySelectorAll(".nav-btn").forEach(a=>{a.addEventListener("click",()=>{i.querySelectorAll(".nav-btn").forEach(s=>s.classList.remove("active")),i.querySelectorAll(".section").forEach(s=>s.classList.remove("active")),a.classList.add("active"),i.querySelector(`[data-section="${a.dataset.tab}"]`).classList.add("active")})}),i.querySelectorAll(".checklist li[data-id]").forEach(a=>{a.addEventListener("click",()=>{const s=a.dataset.id,n=a.querySelector(".check-box").classList.toggle("checked");a.classList.toggle("done",n),g(s,n)})});const t={yuta:`Yutaさん、お疲れ様です。労災の手続きを進めてくれているとのことで、ありがとうございます。確認のためいくつかお聞きしたいのですが：
 
 1) 労災の申請書類はもう提出しましたか？
 2) 提出先の労働基準監督署はどこですか？
 3) 受理番号か控えのコピーをもらえますか？
 
-まだめまいと聴覚の違和感が続いていて、医師から専門医への紹介が必要と言われています。今後の治療費も労災で対応をお願いします。`,decline:"大丈夫です。妻と行きます。ありがとうございます。でも家族と行きたいです。"};i.querySelectorAll(".copy-btn").forEach(a=>{a.addEventListener("click",s=>{s.stopPropagation();const t=a.dataset.copy;u[t]&&m(u[t],a)})})}k();
+まだめまいと聴覚の違和感が続いていて、医師から専門医への紹介が必要と言われています。今後の治療費も労災で対応をお願いします。`,decline:"大丈夫です。妻と行きます。ありがとうございます。でも家族と行きたいです。","hospital-call":"先日救急で受診した者ですが、まだめまいが続いているので受診したいです。今日行っても大丈夫ですか？",privacy:"会社には連絡しないでください。個人で来ています。",shindansho:"診断書をお願いしたいのですが。労災で使います。診断書に「休業が必要」と書いてもらえますか？",referral:"脳神経外科への紹介状をお願いできますか？耳鼻咽喉科もお願いします。"};i.querySelectorAll(".copy-btn").forEach(a=>{a.addEventListener("click",s=>{s.stopPropagation();const u=a.dataset.copy;t[u]&&m(t[u],a)})})}v();
