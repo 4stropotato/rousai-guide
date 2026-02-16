@@ -4,6 +4,7 @@ const TABS = [
   { id: 'steps', label: 'Steps' },
   { id: 'convo', label: 'Phrases' },
   { id: 'money', label: 'Compensation' },
+  { id: 'lawyer', label: 'Lawyer' },
   { id: 'checklist', label: 'Checklist' },
   { id: 'contacts', label: 'Contacts' },
 ]
@@ -34,6 +35,19 @@ function convo(who, label, jp, romaji, meaning) {
 
 function renderSteps() {
   return `
+<div class="warning-box" style="margin-bottom:20px">
+  <h4>BABALA TUNGKOL KAY YUTA</h4>
+  <p style="margin-bottom:8px">Ang behavior ni Yuta ay RED FLAG. Hindi siya nag-aalaga sa'yo — <strong>binabantayan ka niya</strong>:</p>
+  <ul>
+    <li>Kasama ka sa emergency at hospital — nagmamasid lang</li>
+    <li>Hindi nag-offer mag-file ng rousai agad</li>
+    <li>Nag-insist na siya ang sasama sa hospital, hindi si Naomi (asawa mo)</li>
+    <li>Gusto niyang ma-control kung ano ang maririnig mo at sasabihin mo sa doctor</li>
+  </ul>
+  <p style="margin-top:10px"><strong>Bakit?</strong> Kasi kasalanan niya ang accident (binago ang safe location, hindi pinansin ang babala mo). Ayaw niyang mag-file ka ng malaking claim.</p>
+  <p style="margin-top:8px;color:white"><strong>RULE: Si NAOMI ang isama mo sa hospital, HINDI si Yuta.</strong></p>
+</div>
+
 <div class="phase-header"><h3>PHASE 1: NGAYONG WEEK (Day 1-7)</h3><p>Immediate — Medical at FRESC muna</p></div>
 
 <div class="step-card urgent">
@@ -64,11 +78,26 @@ function renderSteps() {
 
 <div class="step-card urgent">
   <div class="step-number">3</div>
-  <h4>Bumalik sa Hospital</h4>
-  <p>Sabihin: <strong>\u52b4\u707d\u3067\u3059 (Rousai desu)</strong></p>
+  <h4>Bumalik sa Hospital — KASAMA SI NAOMI, HINDI SI YUTA</h4>
+  <div class="highlight danger" style="margin-bottom:10px">
+    <strong>Si Naomi (asawa mo) ang isama mo, HINDI si Yuta.</strong><br>
+    Kung mag-insist si Yuta, sabihin mo:
+  </div>
+  ${phrase(
+    '\u5927\u4e08\u592b\u3067\u3059\u3002\u59bb\u3068\u884c\u304d\u307e\u3059\u3002',
+    'Daijoubu desu. Tsuma to ikimasu.',
+    'Okay lang. Kasama ko ang asawa ko.'
+  )}
+  ${phrase(
+    '\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3067\u3082\u5bb6\u65cf\u3068\u884c\u304d\u305f\u3044\u3067\u3059\u3002',
+    'Arigatou gozaimasu. Demo kazoku to ikitai desu.',
+    'Salamat. Pero gusto kong kasama ang pamilya ko.'
+  )}
+  <button class="copy-btn" data-copy="decline">Copy Japanese text</button>
+  <p style="margin-top:12px">Sa hospital, sabihin: <strong>\u52b4\u707d\u3067\u3059 (Rousai desu)</strong></p>
   <p>Humingi ng:</p>
   <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li><strong>\u8a3a\u65ad\u66f8 (Shindansho)</strong> \u2014 medical certificate</li>
+    <li><strong>\u8a3a\u65ad\u66f8 (Shindansho)</strong> \u2014 medical certificate \u2014 IKAW ANG PWEDENG KUMUHA NITO, hindi kailangan si Yuta</li>
     <li>Referral sa <strong>\u8133\u795e\u7d4c\u5916\u79d1 (Neurologist)</strong> \u2014 para sa dizziness/head</li>
     <li>Referral sa <strong>\u8033\u9f3b\u54bd\u5589\u79d1 (ENT)</strong> \u2014 para sa hearing</li>
   </ul>
@@ -194,6 +223,16 @@ function renderConvo() {
   ${convo('you', 'IKAW', '\u8a3a\u65ad\u66f8\u306b\u300c\u4f11\u696d\u304c\u5fc5\u8981\u300d\u3068\u66f8\u3044\u3066\u3082\u3089\u3048\u307e\u3059\u304b\uff1f', 'Shindansho ni "kyuugyou ga hitsuyou" to kaite moraemasu ka?', 'Pwede bang isulat sa certificate na kailangan ko ng rest from work?')}
   ${convo('you', 'IKAW', '\u8133\u795e\u7d4c\u5916\u79d1\u3078\u306e\u7d39\u4ecb\u72b6\u3092\u304a\u9858\u3044\u3067\u304d\u307e\u3059\u304b\uff1f', 'Nou-shinkei-geka e no shoukai-jou wo onegai dekimasu ka?', 'Pwede bang humingi ng referral letter sa neurologist?')}
   ${convo('you', 'IKAW', '\u8033\u9f3b\u54bd\u5589\u79d1\u3082\u304a\u9858\u3044\u3057\u307e\u3059\u3002', 'Jibi-inkou-ka mo onegai shimasu.', 'Pati ENT doctor.')}
+</div>
+
+<div class="card">
+  <h3>Kay Yuta \u2014 Tanggihan ang Hospital (Si Naomi ang isama mo)</h3>
+  ${convo('them', 'YUTA', '\u4ffa\u304c\u75c5\u9662\u306b\u9023\u308c\u3066\u884c\u304f\u3088\u3002', 'Ore ga byouin ni tsurete iku yo.', 'Sasamahan kita sa hospital.')}
+  ${convo('you', 'IKAW', '\u5927\u4e08\u592b\u3067\u3059\u3002\u59bb\u3068\u884c\u304d\u307e\u3059\u3002', 'Daijoubu desu. Tsuma to ikimasu.', 'Okay lang. Kasama ko ang asawa ko.')}
+  <p style="color:var(--text-dim);font-size:0.85rem;margin:8px 0">Kung mag-insist pa rin:</p>
+  ${convo('you', 'IKAW', '\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3067\u3082\u5bb6\u65cf\u3068\u884c\u304d\u305f\u3044\u3067\u3059\u3002', 'Arigatou gozaimasu. Demo kazoku to ikitai desu.', 'Salamat. Pero gusto kong kasama ang pamilya ko.')}
+  <button class="copy-btn" data-copy="decline">Copy Japanese text</button>
+  <div class="highlight danger" style="margin-top:10px">Hindi niya karapatan na pigilan si Naomi. Hindi ka niya empleyado sa hospital — pasyente ka. Pwede kang pumili kung sino ang kasama mo.</div>
 </div>
 
 <div class="card">
@@ -333,6 +372,139 @@ function renderMoney() {
 `
 }
 
+function renderLawyer() {
+  return `
+<h2 class="section-title">Lawyer Guide — LIBRE, WALANG BAYAD</h2>
+
+<div class="highlight ok" style="font-size:1rem;text-align:center;padding:20px">
+  <strong>HINDI MO KAILANGAN NG PERA PARA SA LAWYER.</strong><br>
+  May 3 options na ZERO gastos.
+</div>
+
+<div class="card">
+  <h3>Option 1: FRESC Referral (Pinaka-madali)</h3>
+  <p style="font-size:1.2rem;font-weight:700;color:var(--text)"><a href="tel:0120762029" style="color:var(--accent);text-decoration:none">0120-76-2029</a></p>
+  <ul style="padding-left:20px">
+    <li>FREE legal consultation for foreign workers</li>
+    <li>May Tagalog/English support</li>
+    <li>Mag-re-refer sila ng lawyer na libre o affordable</li>
+    <li><strong>Ito ang UNANG tawagan mo</strong></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Option 2: Houterasu — Government Legal Aid</h3>
+  <p style="font-size:1.2rem;font-weight:700;color:var(--text)"><a href="tel:0570078374" style="color:var(--accent);text-decoration:none">0570-078374</a></p>
+  <ul style="padding-left:20px">
+    <li><strong>3 beses na FREE consultation</strong> sa lawyer</li>
+    <li>Kung low income ka (wala kang trabaho ngayon dahil sa injury) = <strong>QUALIFY ka</strong></li>
+    <li>Sila ang magbabayad ng lawyer fees</li>
+    <li>Babayaran mo na lang ng <strong>maliit na hulog</strong> pagkatapos (~\u00a55,000-10,000/month)</li>
+    <li>Kung hindi ka makapag-bayad = pwedeng i-defer o bawasan pa</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Option 3: "No Win, No Fee" Lawyer (\u6210\u529f\u5831\u916c\u578b)</h3>
+  <ul style="padding-left:20px">
+    <li><strong>ZERO bayad sa simula</strong></li>
+    <li><strong>ZERO bayad kung natalo</strong></li>
+    <li>Kung NANALO = kukuha lang sila ng <strong>20-30%</strong> ng nakuha mo</li>
+    <li>Hindi ka naglalabas ng kahit isang yen mula sa bulsa mo</li>
+  </ul>
+  <div class="highlight" style="margin-top:12px">
+    <strong>Halimbawa:</strong><br>
+    Nakuha mo \u00a510,000,000 sa civil damages<br>
+    Lawyer fee (25%) = \u00a52,500,000<br>
+    <strong>SA'YO: \u00a57,500,000</strong> — at hindi ka naglabas ng pera
+  </div>
+</div>
+
+<div class="card">
+  <h3>Pinaka-Magandang Plan</h3>
+  <div style="background:var(--bg);border-radius:8px;padding:16px;font-size:0.9rem;color:var(--text-dim)">
+    <p><strong style="color:var(--accent)">Step 1:</strong> Tawagan FRESC (0120-76-2029) &mdash; "Tagalog please"</p>
+    <p style="margin:4px 0;color:var(--text-dim)">&darr;</p>
+    <p><strong style="color:var(--accent)">Step 2:</strong> FRESC mag-re-refer ng lawyer sa'yo</p>
+    <p style="margin:4px 0;color:var(--text-dim)">&darr;</p>
+    <p><strong style="color:var(--accent)">Step 3:</strong> Kung kailangan ng bayad &rarr; apply sa Houterasu</p>
+    <p style="margin:4px 0;color:var(--text-dim)">O kaya &rarr;</p>
+    <p><strong style="color:var(--accent)">Step 3b:</strong> Humanap ng "No Win, No Fee" lawyer</p>
+    <p style="margin:4px 0;color:var(--text-dim)">&darr;</p>
+    <p><strong style="color:var(--success)">Result:</strong> May lawyer ka na. ZERO gastos.</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Sino ang Pananagutan? (Liability)</h3>
+  <p style="color:var(--accent);margin-bottom:10px">May TATLO na may pananagutan sa accident mo. Pwedeng i-claim sa lahat.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Sino</th><th>Bakit May Pananagutan</th><th>Level</th></tr>
+    <tr>
+      <td><strong>Ninomiya Kougyo<br>(Yuta)</strong></td>
+      <td>
+        Direct employer mo. May \u5b89\u5168\u914d\u616e\u7fa9\u52d9 (duty of care).<br>
+        Si Yuta ang nagbago ng safe testing location.<br>
+        Si Yuta ang hindi nakinig sa babala mo tungkol sa burikki.<br>
+        <strong>President siya = company liable.</strong>
+      </td>
+      <td class="amt" style="font-weight:800">MATAAS</td>
+    </tr>
+    <tr>
+      <td><strong>Asami Kougyo<br>(Senno)</strong></td>
+      <td>
+        Si Senno ang \u73fe\u5834\u76e3\u7763 (kantoku/site supervisor).<br>
+        Siya ang nag-conduct ng kimitsu test kasama ni Yuta.<br>
+        May \u5b89\u5168\u7ba1\u7406\u8cac\u4efb (safety management duty).<br>
+        Kung siya ang \u5143\u8acb\u3051 (prime contractor) = may direct liability din.
+      </td>
+      <td class="amt" style="font-weight:800">MATAAS</td>
+    </tr>
+    <tr>
+      <td><strong>Both Companies<br>Jointly</strong></td>
+      <td>
+        Sa Japanese law, kung dalawang company ang involved sa isang project at may nangyaring accident, <strong>both are jointly liable</strong> (\u5171\u540c\u4e0d\u6cd5\u884c\u70ba).<br>
+        Ibig sabihin: pwede kang mag-claim sa DALAWA.
+      </td>
+      <td class="amt" style="font-weight:800">PAREHO</td>
+    </tr>
+  </table></div>
+  <div class="highlight warn" style="margin-top:12px">
+    <strong>Ang lawyer mo ang mag-determine kung sino ang i-sue:</strong><br>
+    Pwedeng Ninomiya lang, pwedeng Asami lang, o pwedeng DALAWA. Mas malaki ang makukuha mo kung DALAWA ang i-claim.
+  </div>
+</div>
+
+<div class="card">
+  <h3>Ano ang Sasabihin sa Lawyer</h3>
+  <p>Sa first consultation, dalhin/sabihin mo ang mga ito:</p>
+  <ul style="padding-left:20px">
+    <li>Accident report (meron ka na nito sa read.txt)</li>
+    <li>Shindansho at medical records</li>
+    <li>Photos ng injuries</li>
+    <li>Screenshots ng messages kay Yuta</li>
+    <li>Payslips (para ma-compute ang compensation)</li>
+    <li>"Hindi ako ang assigned sa kimitsu test"</li>
+    <li>"Nag-prepare ako ng safe testing area pero binago ni Yuta"</li>
+    <li>"Binalaan ko sila tungkol sa burikki pero hindi pinansin"</li>
+    <li>"Si Senno ng Asami Kougyo ang kantoku na nandoon"</li>
+    <li>"May buntis akong asawa at anak na mag-e-elementary"</li>
+  </ul>
+</div>
+
+<div class="warning-box">
+  <h4>HUWAG GAWIN — BAGO MAKAUSAP ANG LAWYER</h4>
+  <ul>
+    <li>HUWAG mag-sign ng kahit anong papel galing kay Yuta o Asami Kougyo</li>
+    <li>HUWAG tumanggap ng cash/pera bilang "settlement" nang walang lawyer</li>
+    <li>HUWAG mag-agree na "okay na tayo" o "ayos na ito"</li>
+    <li>HUWAG mag-resign o mag-agree na tapusin ang contract</li>
+    <li>Kung i-pressure ka, sabihin lang: \u307e\u305a\u5f01\u8b77\u58eb\u306b\u76f8\u8ac7\u3057\u307e\u3059 (Mazu bengoshi ni soudan shimasu) = "Magpa-consult muna ako sa lawyer"</li>
+  </ul>
+</div>
+`
+}
+
 function renderChecklist() {
   const items = [
     { id: 'c1', text: 'Tawagan FRESC (0120-76-2029) \u2014 "Tagalog please"', phase: 'Week 1' },
@@ -466,6 +638,7 @@ function render() {
 <div class="section active" data-section="steps">${renderSteps()}</div>
 <div class="section" data-section="convo">${renderConvo()}</div>
 <div class="section" data-section="money">${renderMoney()}</div>
+<div class="section" data-section="lawyer">${renderLawyer()}</div>
 <div class="section" data-section="checklist">${renderChecklist()}</div>
 <div class="section" data-section="contacts">${renderContacts()}</div>
 `
@@ -492,12 +665,16 @@ function render() {
   })
 
   // Copy buttons
-  const yutaMsg = 'Yuta\u3055\u3093\u3001\u304a\u75b2\u308c\u69d8\u3067\u3059\u3002\u52b4\u707d\u306e\u624b\u7d9a\u304d\u3092\u9032\u3081\u3066\u304f\u308c\u3066\u3044\u308b\u3068\u306e\u3053\u3068\u3067\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u78ba\u8a8d\u306e\u305f\u3081\u3044\u304f\u3064\u304b\u304a\u805e\u304d\u3057\u305f\u3044\u306e\u3067\u3059\u304c\uff1a\n\n1) \u52b4\u707d\u306e\u7533\u8acb\u66f8\u985e\u306f\u3082\u3046\u63d0\u51fa\u3057\u307e\u3057\u305f\u304b\uff1f\n2) \u63d0\u51fa\u5148\u306e\u52b4\u50cd\u57fa\u6e96\u76e3\u7763\u7f72\u306f\u3069\u3053\u3067\u3059\u304b\uff1f\n3) \u53d7\u7406\u756a\u53f7\u304b\u63a7\u3048\u306e\u30b3\u30d4\u30fc\u3092\u3082\u3089\u3048\u307e\u3059\u304b\uff1f\n\n\u307e\u3060\u3081\u307e\u3044\u3068\u8074\u899a\u306e\u9055\u548c\u611f\u304c\u7d9a\u3044\u3066\u3044\u3066\u3001\u533b\u5e2b\u304b\u3089\u5c02\u9580\u533b\u3078\u306e\u7d39\u4ecb\u304c\u5fc5\u8981\u3068\u8a00\u308f\u308c\u3066\u3044\u307e\u3059\u3002\u4eca\u5f8c\u306e\u6cbb\u7642\u8cbb\u3082\u52b4\u707d\u3067\u5bfe\u5fdc\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002'
+  const copyTexts = {
+    yuta: 'Yuta\u3055\u3093\u3001\u304a\u75b2\u308c\u69d8\u3067\u3059\u3002\u52b4\u707d\u306e\u624b\u7d9a\u304d\u3092\u9032\u3081\u3066\u304f\u308c\u3066\u3044\u308b\u3068\u306e\u3053\u3068\u3067\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u78ba\u8a8d\u306e\u305f\u3081\u3044\u304f\u3064\u304b\u304a\u805e\u304d\u3057\u305f\u3044\u306e\u3067\u3059\u304c\uff1a\n\n1) \u52b4\u707d\u306e\u7533\u8acb\u66f8\u985e\u306f\u3082\u3046\u63d0\u51fa\u3057\u307e\u3057\u305f\u304b\uff1f\n2) \u63d0\u51fa\u5148\u306e\u52b4\u50cd\u57fa\u6e96\u76e3\u7763\u7f72\u306f\u3069\u3053\u3067\u3059\u304b\uff1f\n3) \u53d7\u7406\u756a\u53f7\u304b\u63a7\u3048\u306e\u30b3\u30d4\u30fc\u3092\u3082\u3089\u3048\u307e\u3059\u304b\uff1f\n\n\u307e\u3060\u3081\u307e\u3044\u3068\u8074\u899a\u306e\u9055\u548c\u611f\u304c\u7d9a\u3044\u3066\u3044\u3066\u3001\u533b\u5e2b\u304b\u3089\u5c02\u9580\u533b\u3078\u306e\u7d39\u4ecb\u304c\u5fc5\u8981\u3068\u8a00\u308f\u308c\u3066\u3044\u307e\u3059\u3002\u4eca\u5f8c\u306e\u6cbb\u7642\u8cbb\u3082\u52b4\u707d\u3067\u5bfe\u5fdc\u3092\u304a\u9858\u3044\u3057\u307e\u3059\u3002',
+    decline: '\u5927\u4e08\u592b\u3067\u3059\u3002\u59bb\u3068\u884c\u304d\u307e\u3059\u3002\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\u3067\u3082\u5bb6\u65cf\u3068\u884c\u304d\u305f\u3044\u3067\u3059\u3002',
+  }
 
   app.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation()
-      if (btn.dataset.copy === 'yuta') copyText(yutaMsg, btn)
+      const key = btn.dataset.copy
+      if (copyTexts[key]) copyText(copyTexts[key], btn)
     })
   })
 }
