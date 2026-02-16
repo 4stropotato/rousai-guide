@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface2: #334155;
+  --accent: #38bdf8;
+  --accent2: #818cf8;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --text: #f1f5f9;
+  --text-dim: #94a3b8;
+  --border: #475569;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+.header {
+  text-align: center;
+  padding: 32px 16px;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.header h1 { font-size: 1.5rem; margin-bottom: 8px; color: var(--accent); }
+.header p { color: var(--text-dim); font-size: 0.9rem; }
+
+.emergency-banner {
+  background: linear-gradient(135deg, #991b1b, #7f1d1d);
+  border: 1px solid var(--danger);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.emergency-banner h2 { font-size: 1.1rem; color: #fca5a5; margin-bottom: 8px; }
+.emergency-banner .phone { font-size: 1.8rem; font-weight: 800; color: white; letter-spacing: 2px; }
+.emergency-banner .phone a { color: white; text-decoration: none; }
+.emergency-banner .sub { color: #fca5a5; font-size: 0.85rem; margin-top: 4px; }
+
+.nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 16px;
+  margin-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.nav::-webkit-scrollbar { display: none; }
+
+.nav-btn {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-btn:hover { border-color: var(--accent); color: var(--text); }
+.nav-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+
+.section { display: none; }
+.section.active { display: block; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.card h3 { color: var(--accent); font-size: 1rem; margin-bottom: 12px; }
+.card p, .card li { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 8px; }
+.card ul, .card ol { padding-left: 20px; }
+
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+  border-left: 4px solid var(--accent);
+}
+.step-card.urgent { border-left-color: var(--danger); }
+.step-card.warn { border-left-color: var(--warning); }
+.step-card.ok { border-left-color: var(--success); }
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.step-card.urgent .step-number { background: var(--danger); }
+.step-card.warn .step-number { background: var(--warning); color: var(--bg); }
+.step-card.ok .step-number { background: var(--success); color: var(--bg); }
+
+.step-card h4 { font-size: 0.95rem; margin-bottom: 8px; color: var(--text); }
+.step-card p { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 6px; }
+
+.phrase-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 10px 0;
+}
+.phrase-box .jp { font-size: 1rem; color: var(--text); margin-bottom: 4px; font-weight: 500; }
+.phrase-box .romaji { color: var(--accent2); font-style: italic; margin-bottom: 4px; font-size: 0.85rem; }
+.phrase-box .meaning { color: var(--text-dim); font-size: 0.85rem; }
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+.copy-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.copy-btn.copied { background: var(--success); color: white; border-color: var(--success); }
+
+.table-wrap { overflow-x: auto; margin: 12px 0; -webkit-overflow-scrolling: touch; }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 400px; }
+th { background: var(--bg); color: var(--accent); text-align: left; padding: 10px 12px; font-weight: 600; border-bottom: 2px solid var(--border); white-space: nowrap; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-dim); }
+tr:hover td { background: rgba(56, 189, 248, 0.05); }
+.amt { color: var(--success); font-weight: 700; }
+.amt-big { color: var(--success); font-weight: 800; font-size: 1.1em; }
+
+.highlight {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+.highlight.danger { background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); color: #fca5a5; }
+.highlight.warn { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: #fcd34d; }
+.highlight.ok { background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.3); color: #86efac; }
+
+.checklist { list-style: none; padding: 0; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px 0;
+  border-bottom: 1px solid rgba(71, 85, 105, 0.5); color: var(--text-dim); font-size: 0.9rem;
+}
+.checklist li:last-child { border-bottom: none; }
+.check-box {
+  flex-shrink: 0; width: 22px; height: 22px; border: 2px solid var(--border); border-radius: 4px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin-top: 1px;
+}
+.check-box.checked { background: var(--success); border-color: var(--success); }
+.check-box.checked::after { content: '\2713'; color: white; font-size: 14px; font-weight: 700; }
+.checklist li.done span { text-decoration: line-through; opacity: 0.5; }
+
+.convo-line {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+.convo-line.them { background: var(--surface2); border-radius: 12px 12px 12px 4px; margin-right: 40px; }
+.convo-line.you { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px 12px 4px 12px; margin-left: 40px; }
+.convo-label { font-size: 0.75rem; font-weight: 600; margin-bottom: 4px; color: var(--accent); }
+.convo-line.them .convo-label { color: var(--text-dim); }
+
+.section-title { font-size: 1.2rem; color: var(--text); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+
+.phase-header {
+  background: linear-gradient(135deg, var(--surface), var(--surface2));
+  border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; margin-top: 24px;
+}
+.phase-header:first-child { margin-top: 0; }
+.phase-header h3 { color: var(--accent); font-size: 1rem; margin: 0; }
+.phase-header p { color: var(--text-dim); font-size: 0.85rem; margin-top: 4px; }
+
+.grand-total {
+  background: linear-gradient(135deg, #064e3b, #065f46);
+  border: 2px solid var(--success); border-radius: 16px; padding: 24px; margin: 24px 0; text-align: center;
+}
+.grand-total h3 { color: var(--success); font-size: 1.1rem; margin-bottom: 16px; }
+.grand-total .big-number { font-size: 1.6rem; font-weight: 800; color: white; margin: 8px 0; }
+.grand-total .sub-number { color: #86efac; font-size: 1rem; }
+
+.warning-box {
+  background: rgba(239, 68, 68, 0.1); border: 2px solid var(--danger); border-radius: 12px; padding: 16px 20px; margin: 16px 0;
+}
+.warning-box h4 { color: var(--danger); margin-bottom: 8px; }
+.warning-box p, .warning-box li { color: #fca5a5; font-size: 0.9rem; }
+.warning-box ul { padding-left: 20px; }
+.warning-box li { margin-bottom: 4px; }
+
+@media (max-width: 600px) {
+  #app { padding: 12px; }
+  .header h1 { font-size: 1.3rem; }
+  .convo-line.them { margin-right: 20px; }
+  .convo-line.you { margin-left: 20px; }
+  .grand-total .big-number { font-size: 1.3rem; }
+  .emergency-banner .phone { font-size: 1.4rem; }
+}
