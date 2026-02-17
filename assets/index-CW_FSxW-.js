@@ -12,18 +12,20 @@
   <p style="margin-top:8px;color:white"><strong>RULE: Bring NAOMI to the hospital, NOT Yuta.</strong></p>
 </div>
 
-<div class="phase-header"><h3>TODAY — CORRECT ORDER OF ACTIONS</h3><p>Call FRESC first so you have guidance before going to the hospital</p></div>
+<div class="phase-header"><h3>TODAY — CORRECT ORDER OF ACTIONS</h3><p>If symptoms suddenly worsen, call 119 first. If stable, call legal support then hospital.</p></div>
 
 <div class="highlight ok" style="margin-bottom:16px">
-  <strong>WHY CALL FRESC BEFORE THE HOSPITAL?</strong><br>
-  If you call FRESC first, they will tell you EXACTLY what to do at the hospital — what to say, what to ask for, how to handle rousai. You'll be more confident when you go. The shindansho won't disappear — you can get it today or next week.
+  <strong>SAFETY FIRST:</strong><br>
+  119 comes first for urgent symptoms. If stable, support lines can guide you on rousai, lawyer referral, and what to request at the hospital.
 </div>
 
 <div class="step-card urgent">
   <div class="step-number">1</div>
-  <h4>9:00 AM — Call FRESC (DO THIS FIRST)</h4>
-  <p style="font-size:1.1rem;font-weight:700"><a href="tel:0120762029" style="color:var(--accent);text-decoration:none">0120-76-2029</a> (FREE)</p>
+  <h4>9:00 AM — Call Multilingual Legal Support</h4>
+  <p style="font-size:1.1rem;font-weight:700"><a href="tel:0570078377" style="color:var(--accent);text-decoration:none">0570-078377</a> (IP/prepaid: 050-3754-5430)</p>
   <p>Open: Weekdays 9:00-17:00</p>
+  <p style="font-size:0.85rem;color:var(--text-dim)">If unavailable: FRESC reservation 03-5363-3025 (21 languages)</p>
+  <p style="font-size:0.85rem;color:var(--text-dim)">Immigration/status info: 0570-013904 (IP/PHS/overseas: 03-5796-7112)</p>
   <p>Say: <strong>"Tagalog please"</strong> or <strong>"English please"</strong></p>
   <p>Then explain your situation:</p>
   <p style="background:var(--bg);padding:12px;border-radius:8px;margin:8px 0;font-size:0.9rem">"I had a work accident 2 days ago. I was hit during a pressure test (kimitsu test) at my employer's factory. I have head injury, dizziness, hearing problems, knee pain, and 9 stitches on my finger. My employer says he filed rousai but I'm not sure. I need help with: (1) verifying the rousai, (2) getting a lawyer for civil damages, and (3) what to do at the hospital. I have no money for a lawyer. My wife is pregnant and I have a child."</p>
@@ -39,7 +41,7 @@
 
 <div class="step-card urgent">
   <div class="step-number">2</div>
-  <h4>After FRESC — Call the Hospital to Schedule</h4>
+  <h4>After Support Call — Call the Hospital to Schedule</h4>
   <p>Call the hospital where you went to the emergency to set an appointment:</p>
   ${n("先日救急で受診した者ですが、まだめまいが続いているので受診したいです。今日行っても大丈夫ですか？","Senjitsu kyuukyuu de jushin shita mono desu ga, mada memai ga tsuzuite iru node jushin shitai desu. Kyou itte mo daijoubu desu ka?","I came to the emergency recently. I still have dizziness and want to be seen. Can I come today?")}
   <button class="copy-btn" data-copy="hospital-call">Copy Japanese text</button>
@@ -87,8 +89,8 @@
 
 <div class="step-card">
   <div class="step-number">4</div>
-  <h4>LAST — Message Yuta (After FRESC and Hospital)</h4>
-  <p><strong>This is the LAST step — after you have the shindansho and have talked to FRESC.</strong></p>
+  <h4>LAST — Message Yuta (After Support Call and Hospital)</h4>
+  <p><strong>This is the LAST step — after you have the shindansho and have talked to the support line.</strong></p>
   <p>Why last? So he can't interfere with your hospital visit or pressure you.</p>
   <p style="margin-top:10px">Send via LINE/email:</p>
   ${n("Yutaさん、お疲れ様です。労災の手続きを進めてくれているとのことで、ありがとうございます。確認のためいくつかお聞きしたいのですが：1) 労災の申請書類はもう提出しましたか？ 2) 提出先の労働基準監督署はどこですか？ 3) 受理番号か控えのコピーをもらえますか？","Yuta-san, otsukaresama desu. Rousai no tetsuzuki wo susumete kurete iru to no koto de, arigatou gozaimasu. Kakunin no tame ikutsuka okiki shitai no desu ga: 1) Rousai no shinsei shorui wa mou teishutsu shimashita ka? 2) Teishutsu-saki no roudou kijun kantoku-sho wa doko desu ka? 3) Juri-bangou ka hikae no copy wo moraemasu ka?","Thanks for handling the rousai. To confirm: 1) Have you submitted the forms? 2) Which Labor Office? 3) Can I get the receipt/reference number?")}
@@ -123,7 +125,7 @@
 <div class="step-card warn">
   <div class="step-number">6</div>
   <h4>Verify at Labor Standards Office (労働基準監督署)</h4>
-  <p>FRESC can guide you through this. Or you can go/call yourself.</p>
+  <p>Support line/FRESC route can guide you through this. Or you can go/call yourself.</p>
   <p>Look for: <strong>川崎南労働基準監督署</strong> (Kawasaki Minami Labor Office)</p>
   <p>Tell them the company name: 二宮工業 (Ninomiya Kougyo) and the accident date</p>
   <p>If Yuta has NOT filed → you can file it yourself. That's allowed.</p>
@@ -149,11 +151,12 @@
 
 <div class="step-card ok">
   <div class="step-number">9</div>
-  <h4>Get a Lawyer (FREE)</h4>
+  <h4>Get a Lawyer (Low/No Upfront Cost Options)</h4>
   <p><strong>You don't need money:</strong></p>
   <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li><strong>FRESC referral</strong> — from Step 1, they'll refer you</li>
-    <li><strong>法テラス (Houterasu)</strong> — 0570-078374, free consultation, covers lawyer fees if low income</li>
+    <li><strong>FRESC referral</strong> — 03-5363-3025 (reservation/connection route)</li>
+    <li><strong>法テラス multilingual</strong> — 0570-078377 (IP/prepaid: 050-3754-5430)</li>
+    <li><strong>法テラス JP Support Dial</strong> — 0570-078374 (Japanese line)</li>
     <li><strong>"No Win, No Fee"</strong> lawyer — zero cost upfront, they take a percentage (20-30%) only if you win</li>
   </ul>
   <p style="margin-top:8px">See the <strong>Lawyer tab</strong> for full details.</p>
@@ -208,10 +211,10 @@
 <h2 class="section-title">Conversation Phrases</h2>
 
 <div class="card">
-  <h3>Calling FRESC (0120-76-2029)</h3>
-  ${i("them","FRESC","お電話ありがとうございます。FRESCです。","Odenwa arigatou gozaimasu. FRESC desu.","Thank you for calling. This is FRESC.")}
+  <h3>Calling Multilingual Legal Support (0570-078377)</h3>
+  ${i("them","OPERATOR","ご希望の言語は何ですか？","Gokibou no gengo wa nan desu ka?","Which language would you like?")}
   ${i("you","YOU","すみません、タガログ語の通訳をお願いできますか？","Sumimasen, Tagalog-go no tsuuyaku wo onegai dekimasu ka?","Excuse me, can I get a Tagalog interpreter?")}
-  ${i("them","FRESC","はい、少々お待ちください。","Hai, shoushou omachi kudasai.","Yes, please wait a moment.")}
+  ${i("them","OPERATOR","承知しました。タガログ語通訳につなぎます。少々お待ちください。","Shouchi shimashita. Tagalog-go tsuuyaku ni tsunagimasu. Shoushou omachi kudasai.","Understood. I will connect you to a Tagalog interpreter. Please wait a moment.")}
   <div class="highlight">After the interpreter joins, speak in Tagalog or English. Explain your situation using the script from Step 1.</div>
 </div>
 
@@ -367,29 +370,40 @@
   </div>
 </div>
 `}function v(){return`
-<h2 class="section-title">Lawyer Guide — FREE, NO COST</h2>
+<h2 class="section-title">Lawyer Guide — Low/No Upfront Cost</h2>
 
 <div class="highlight ok" style="font-size:1rem;text-align:center;padding:20px">
   <strong>YOU DON'T NEED MONEY FOR A LAWYER.</strong><br>
-  There are 3 options with ZERO cost.
+  There are 3 options with low/no upfront cost.
 </div>
 
 <div class="card">
-  <h3>Option 1: FRESC Referral (Easiest)</h3>
-  <p style="font-size:1.2rem;font-weight:700;color:var(--text)"><a href="tel:0120762029" style="color:var(--accent);text-decoration:none">0120-76-2029</a></p>
+  <h3>Option 1: Multilingual Legal Support (Best for Tagalog/English)</h3>
+  <p style="font-size:1.2rem;font-weight:700;color:var(--text)"><a href="tel:0570078377" style="color:var(--accent);text-decoration:none">0570-078377</a></p>
   <ul style="padding-left:20px">
-    <li>FREE legal consultation for foreign workers</li>
+    <li>IP/prepaid line: 050-3754-5430</li>
+    <li>If unavailable: FRESC reservation line 03-5363-3025</li>
+    <li>Consultation/support is free; call charges apply</li>
     <li>Tagalog/English support available</li>
-    <li>They will refer you to a free or affordable lawyer</li>
+    <li>They can refer you to a lawyer or legal aid route</li>
     <li><strong>This is your FIRST call</strong></li>
   </ul>
 </div>
 
 <div class="card">
-  <h3>Option 2: Houterasu — Government Legal Aid</h3>
+  <h3>Option 2: Houterasu JP Support Dial</h3>
   <p style="font-size:1.2rem;font-weight:700;color:var(--text)"><a href="tel:0570078374" style="color:var(--accent);text-decoration:none">0570-078374</a></p>
   <ul style="padding-left:20px">
-    <li><strong>3 FREE consultations</strong> with a lawyer</li>
+    <li>Japanese-language legal information line</li>
+    <li>IP phone: 03-6745-5600</li>
+    <li>Can guide you to legal aid applications and next steps</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>Option 3: Houterasu Legal Aid / Lawyer Referral</h3>
+  <ul style="padding-left:20px">
+    <li><strong>Up to 3 consultations</strong> may be available (eligibility-based)</li>
     <li>If you're low income (not working right now due to injury) = <strong>you QUALIFY</strong></li>
     <li>They cover the lawyer's fees</li>
     <li>You pay back in <strong>small installments</strong> later (~¥5,000-10,000/month)</li>
@@ -398,7 +412,7 @@
 </div>
 
 <div class="card">
-  <h3>Option 3: "No Win, No Fee" Lawyer (成功報酬型)</h3>
+  <h3>Option 4: "No Win, No Fee" Lawyer (成功報酬型)</h3>
   <ul style="padding-left:20px">
     <li><strong>ZERO cost upfront</strong></li>
     <li><strong>ZERO cost if you lose</strong></li>
@@ -416,15 +430,16 @@
 <div class="card">
   <h3>Best Plan</h3>
   <div style="background:var(--bg);border-radius:8px;padding:16px;font-size:0.9rem;color:var(--text-dim)">
-    <p><strong style="color:var(--accent)">Step 1:</strong> Call FRESC (0120-76-2029) — "Tagalog please" or "English please"</p>
+    <p><strong style="color:var(--accent)">Step 1:</strong> Call multilingual legal support (0570-078377 / 050-3754-5430)</p>
+    <p><strong style="color:var(--accent)">Fallback:</strong> If unavailable, call FRESC reservation (03-5363-3025)</p>
     <p style="margin:4px 0;color:var(--text-dim)">&darr;</p>
-    <p><strong style="color:var(--accent)">Step 2:</strong> FRESC refers you to a lawyer</p>
+    <p><strong style="color:var(--accent)">Step 2:</strong> Get referral to lawyer/legal aid</p>
     <p style="margin:4px 0;color:var(--text-dim)">&darr;</p>
     <p><strong style="color:var(--accent)">Step 3:</strong> If they need payment → apply at Houterasu</p>
     <p style="margin:4px 0;color:var(--text-dim)">Or →</p>
     <p><strong style="color:var(--accent)">Step 3b:</strong> Find a "No Win, No Fee" lawyer</p>
     <p style="margin:4px 0;color:var(--text-dim)">&darr;</p>
-    <p><strong style="color:var(--success)">Result:</strong> You have a lawyer. ZERO cost.</p>
+    <p><strong style="color:var(--success)">Result:</strong> You have a lawyer route with low/no upfront cost.</p>
   </div>
 </div>
 
@@ -495,7 +510,7 @@
     <li>If pressured, just say: まず弁護士に相談します (Mazu bengoshi ni soudan shimasu) = "Let me consult with my lawyer first"</li>
   </ul>
 </div>
-`}function f(){const s=[{id:"c1",text:'Call FRESC (0120-76-2029) — "Tagalog please" or "English please"',phase:"Week 1"},{id:"c2",text:"Send verification message to Yuta (LINE/email)",phase:"Week 1"},{id:"c3",text:"Screenshot Yuta's reply",phase:"Week 1"},{id:"c4",text:'Go back to hospital — say "Rousai desu"',phase:"Week 1"},{id:"c5",text:"Get Shindansho (medical certificate)",phase:"Week 1"},{id:"c6",text:"Ask for referral to Neurologist",phase:"Week 1"},{id:"c7",text:"Ask for referral to ENT doctor",phase:"Week 1"},{id:"c8",text:"Take photos of injuries",phase:"Week 1"},{id:"c9",text:"Collect payslips (last 3 months)",phase:"Week 1"},{id:"c10",text:"Verify at Labor Office that rousai was filed",phase:"Week 2"},{id:"c11",text:"Go to Neurologist",phase:"Week 2"},{id:"c12",text:"Go to ENT — hearing test",phase:"Week 2"},{id:"c13",text:"Get a lawyer (via FRESC or Houterasu)",phase:"Week 2-3"},{id:"c14",text:"Lawyer files civil damages claim",phase:"Week 3-4"},{id:"c15",text:"Regular hospital visits (every 1-2 weeks)",phase:"Ongoing"},{id:"c16",text:"Report ALL symptoms every visit",phase:"Ongoing"},{id:"c17",text:"Save all receipts and documents",phase:"Ongoing"},{id:"c18",text:"Disability assessment (if permanent symptoms)",phase:"Month 6+"}],a=c();let t='<h2 class="section-title">Progress Checklist</h2>';t+='<p style="color:var(--text-dim);margin-bottom:16px;font-size:0.9rem">Click the box to mark as done. This is saved in your phone/browser.</p>',t+='<div class="card"><ul class="checklist">';let o="";for(const e of s){e.phase!==o&&(o=e.phase,t+=`<li style="border-bottom:none;padding:4px 0"><strong style="color:var(--accent);font-size:0.8rem">${o}</strong></li>`);const r=a[e.id];t+=`<li class="${r?"done":""}" data-id="${e.id}"><div class="check-box ${r?"checked":""}"></div><span>${e.text}</span></li>`}return t+="</ul></div>",t+=`<div class="warning-box">
+`}function f(){const s=[{id:"c1",text:"Call legal support (0570-078377 / 050-3754-5430). If unavailable: 03-5363-3025",phase:"Week 1"},{id:"c2",text:"Send verification message to Yuta (LINE/email)",phase:"Week 1"},{id:"c3",text:"Screenshot Yuta's reply",phase:"Week 1"},{id:"c4",text:'Go back to hospital — say "Rousai desu"',phase:"Week 1"},{id:"c5",text:"Get Shindansho (medical certificate)",phase:"Week 1"},{id:"c6",text:"Ask for referral to Neurologist",phase:"Week 1"},{id:"c7",text:"Ask for referral to ENT doctor",phase:"Week 1"},{id:"c8",text:"Take photos of injuries",phase:"Week 1"},{id:"c9",text:"Collect payslips (last 3 months)",phase:"Week 1"},{id:"c10",text:"Verify at Labor Office that rousai was filed",phase:"Week 2"},{id:"c11",text:"Go to Neurologist",phase:"Week 2"},{id:"c12",text:"Go to ENT — hearing test",phase:"Week 2"},{id:"c13",text:"Get a lawyer (via Houterasu or FRESC reservation route)",phase:"Week 2-3"},{id:"c14",text:"Lawyer files civil damages claim",phase:"Week 3-4"},{id:"c15",text:"Regular hospital visits (every 1-2 weeks)",phase:"Ongoing"},{id:"c16",text:"Report ALL symptoms every visit",phase:"Ongoing"},{id:"c17",text:"Save all receipts and documents",phase:"Ongoing"},{id:"c18",text:"Disability assessment (if permanent symptoms)",phase:"Month 6+"}],a=c();let t='<h2 class="section-title">Progress Checklist</h2>';t+='<p style="color:var(--text-dim);margin-bottom:16px;font-size:0.9rem">Click the box to mark as done. This is saved in your phone/browser.</p>',t+='<div class="card"><ul class="checklist">';let o="";for(const e of s){e.phase!==o&&(o=e.phase,t+=`<li style="border-bottom:none;padding:4px 0"><strong style="color:var(--accent);font-size:0.8rem">${o}</strong></li>`);const r=a[e.id];t+=`<li class="${r?"done":""}" data-id="${e.id}"><div class="check-box ${r?"checked":""}"></div><span>${e.text}</span></li>`}return t+="</ul></div>",t+=`<div class="warning-box">
     <h4>DON'T FORGET</h4>
     <ul>
       <li>DO NOT sign any settlement/waiver without a lawyer</li>
@@ -507,18 +522,32 @@
 <h2 class="section-title">Important Contacts</h2>
 
 <div class="card" style="border-left:4px solid var(--danger)">
-  <h3>FRESC — Foreign Residents Support Center</h3>
-  <p style="font-size:1.3rem;font-weight:800;color:var(--text)"><a href="tel:0120762029" style="color:var(--text);text-decoration:none">0120-76-2029</a></p>
-  <p>FREE • Tagalog/English support available</p>
-  <p>For: Rousai help, lawyer referral, general support</p>
-  <p>Hours: Weekdays 9:00-17:00</p>
+  <h3>FRESC Reservation (21 Languages)</h3>
+  <p style="font-size:1.3rem;font-weight:800;color:var(--text)"><a href="tel:0353633025" style="color:var(--text);text-decoration:none">03-5363-3025</a></p>
+  <p>For: Booking consultation at FRESC (includes Tagalog)</p>
+  <p>FRESC center representative menu: 0570-011000</p>
 </div>
 
 <div class="card">
-  <h3>法テラス (Houterasu) — Japan Legal Support Center</h3>
+  <h3>法テラス Multilingual (Tagalog/English)</h3>
+  <p style="font-size:1.3rem;font-weight:800;color:var(--text)"><a href="tel:0570078377" style="color:var(--text);text-decoration:none">0570-078377</a></p>
+  <p>IP/prepaid: 050-3754-5430</p>
+  <p>Consultation/support is free; call charges apply</p>
+  <p>For: Legal guidance, referral, legal aid route</p>
+</div>
+
+<div class="card">
+  <h3>Foreign Residents Information Center</h3>
+  <p style="font-size:1.3rem;font-weight:800;color:var(--text)"><a href="tel:0570013904" style="color:var(--text);text-decoration:none">0570-013904</a></p>
+  <p>IP/PHS/overseas: 03-5796-7112</p>
+  <p>For: Immigration/status-related phone consultation</p>
+</div>
+
+<div class="card">
+  <h3>法テラス JP Support Dial</h3>
   <p style="font-size:1.3rem;font-weight:800;color:var(--text)"><a href="tel:0570078374" style="color:var(--text);text-decoration:none">0570-078374</a></p>
-  <p>Free consultation x3 • Covers lawyer fees if low income</p>
-  <p>For: Lawyer, legal aid application</p>
+  <p>IP phone: 03-6745-5600</p>
+  <p>Japanese legal information line</p>
 </div>
 
 <div class="card">
@@ -566,9 +595,9 @@
 </div>
 
 <div class="emergency-banner">
-  <h2>YOUR FIRST CALL TOMORROW</h2>
-  <div class="phone"><a href="tel:0120762029">0120-76-2029</a></div>
-  <div class="sub">FRESC — FREE, Tagalog/English support — "Tagalog please"</div>
+  <h2>LEGAL SUPPORT HOTLINE (IF STABLE)</h2>
+  <div class="phone"><a href="tel:0570078377">0570-078377</a></div>
+  <div class="sub">IP/prepaid: 050-3754-5430 • If unavailable: 03-5363-3025 • For emergencies call 119 first</div>
 </div>
 
 <div class="nav">
