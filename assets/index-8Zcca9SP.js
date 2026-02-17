@@ -15,26 +15,26 @@
 <div class="phase-header"><h3>NGAYON — TAMANG ORDER NG GAGAWIN</h3><p>FRESC muna para may guide ka bago hospital</p></div>
 
 <div class="highlight ok" style="margin-bottom:16px">
-  <strong>BAKIT FRESC MUNA BAGO HOSPITAL?</strong><br>
-  Kung tatawag ka muna sa FRESC, sila ang magsasabi sa'yo ng EXACTLY what to do at the hospital — ano ang sabihin, ano ang hingin, paano i-handle ang rousai. Mas confident ka pagpunta mo. Ang shindansho ay hindi mawawala — makukuha mo kahit bukas o next week.
+  <strong>WHY CALL FRESC BEFORE THE HOSPITAL?</strong><br>
+  If you call FRESC first, they will tell you EXACTLY what to do at the hospital — what to say, what to ask for, how to handle rousai. You'll be more confident when you go. The shindansho won't disappear — you can get it today or next week.
 </div>
 
 <div class="step-card urgent">
   <div class="step-number">1</div>
-  <h4>9:00 AM — Tawagan ang FRESC (UNANG GAWIN)</h4>
+  <h4>9:00 AM — Call FRESC (DO THIS FIRST)</h4>
   <p style="font-size:1.1rem;font-weight:700"><a href="tel:0120762029" style="color:var(--accent);text-decoration:none">0120-76-2029</a> (FREE)</p>
   <p>Open: Weekdays 9:00-17:00</p>
-  <p>Sabihin: <strong>"Tagalog please"</strong></p>
-  <p>Pagkatapos, sabihin:</p>
-  <p style="background:var(--bg);padding:12px;border-radius:8px;margin:8px 0;font-size:0.9rem">"I had a work accident 2 days ago. I was hit during a pressure test at my employer's factory. I have head injury, dizziness, hearing problems, knee pain, and 9 stitches on my finger. My employer says he filed rousai but I'm not sure. I need help with: (1) verifying the rousai, (2) getting a lawyer for civil damages, and (3) what to do at the hospital. I have no money for a lawyer. My wife is pregnant and I have a child."</p>
-  <p style="margin-top:10px">Itanong mo rin:</p>
+  <p>Say: <strong>"Tagalog please"</strong> or <strong>"English please"</strong></p>
+  <p>Then explain your situation:</p>
+  <p style="background:var(--bg);padding:12px;border-radius:8px;margin:8px 0;font-size:0.9rem">"I had a work accident 2 days ago. I was hit during a pressure test (kimitsu test) at my employer's factory. I have head injury, dizziness, hearing problems, knee pain, and 9 stitches on my finger. My employer says he filed rousai but I'm not sure. I need help with: (1) verifying the rousai, (2) getting a lawyer for civil damages, and (3) what to do at the hospital. I have no money for a lawyer. My wife is pregnant and I have a child."</p>
+  <p style="margin-top:10px">Also ask:</p>
   <ul style="padding-left:20px;color:var(--text-dim);font-size:0.85rem">
-    <li>Ano ang dapat kong gawin sa hospital? Ano ang hingin ko?</li>
-    <li>Paano i-verify kung nag-file na ng rousai ang employer ko?</li>
-    <li>May ma-re-refer ba kayong libre na lawyer?</li>
-    <li>Kailangan ko bang sabihin sa employer na pupunta ako ng hospital?</li>
+    <li>What should I do at the hospital? What should I ask for?</li>
+    <li>How can I verify if my employer actually filed rousai?</li>
+    <li>Can you refer me to a free lawyer?</li>
+    <li>Do I need to tell my employer that I'm going to the hospital?</li>
   </ul>
-  <div class="highlight">Sila na ang mag-guide sa'yo sa LAHAT ng susunod — hospital, rousai, lawyer. Hindi mo kailangang isipin lahat mag-isa. Trabaho nila yan.</div>
+  <div class="highlight">They will guide you through EVERYTHING — hospital, rousai, lawyer. You don't have to figure this out alone. It's their job.</div>
 </div>
 
 <div class="step-card urgent">
@@ -208,11 +208,11 @@
 <h2 class="section-title">Conversation Phrases</h2>
 
 <div class="card">
-  <h3>Pagtawag sa FRESC (0120-76-2029)</h3>
+  <h3>Calling FRESC (0120-76-2029)</h3>
   ${e("them","FRESC","お電話ありがとうございます。FRESCです。","Odenwa arigatou gozaimasu. FRESC desu.","Thank you for calling. This is FRESC.")}
-  ${e("you","IKAW","すみません、タガログ語の通訳をお願いできますか？","Sumimasen, Tagalog-go no tsuuyaku wo onegai dekimasu ka?","Pwede bang mag-Tagalog interpreter?")}
+  ${e("you","YOU","すみません、タガログ語の通訳をお願いできますか？","Sumimasen, Tagalog-go no tsuuyaku wo onegai dekimasu ka?","Can I get a Tagalog interpreter please?")}
   ${e("them","FRESC","はい、少々お待ちください。","Hai, shoushou omachi kudasai.","Yes, please wait.")}
-  <div class="highlight">Pagkatapos nito, mag-Tagalog/English ka na. Sabihin mo ang situation mo.</div>
+  <div class="highlight">After the interpreter joins, speak in Tagalog or English. Explain your situation using the script from Step 1.</div>
 </div>
 
 <div class="card">
